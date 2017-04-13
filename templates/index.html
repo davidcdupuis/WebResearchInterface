@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Research Web Interface</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="static/stylesheets/style.css">
+    <!--Import jquery, D3, D3 graph script, graph css and more -->
+  </head>
+  <body>
+    <div class="mdl-layout__container">
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        {% include "header.html" %}
+        <main class="mdl-layout__content">
+          <div class="mdl-grid portfolio-max-width">
+            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text" style="margin:auto">
+                  Introduction
+                </h2>
+              </div>
+              <div class="mdl-card__supporting-text" style="font-size:20px; line-height:25px">
+                Real-Time Bidding (RTB) for online display advertising is a new way of targeting users by purchasing ad spaces on websites, emails and mobile applications as soon
+                as the user launches the web page or application interface or as soon as the email is sent.
+              </div>
+              <div class="mdl-card__supporting-text" style="font-size:20px; line-height:25px">
+                The purpose of this interface is to help me during my PhD Research. I developed this interface so that I could better manage my research by better managing the papers that
+                I find and my own. I also wanted to develop a cool, easy to use, and intuitive graphical representation of the network of articles, authors, tags, themes, etc. around RTB.
+              </div>
+              <div class="mdl-card__supporting-text" style="font-size:20px; line-height:25px">
+                Currently the interface is divided into three parts.</br></br>
+                The first part is the articles section which will allows one to manage his or her articles by searching through them, add new article, opening them up, updating them and scoring them,
+                and eventually deleting them if necessary. Any modifications to the papers will modify a JSON file containing information on the papers which will in turn be used for the graph.</br></br>
+                The second part is the same as the first except that it will be used to manage theses papers which don't have the same scope of impact as articles.</br></br>
+                Finally, the third  part is the vizualizations aspect of the existing networks and relationships resulting from RTB research. This graph is coded in D3.js and currently exists only
+                as a network graph of articles. The initial graph is still incomplete but is soon to be completed before I move on to the other possiblel vizualizations.
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="static/javascripts/script.js"></script>
+  </body>
+</html>

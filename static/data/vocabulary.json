@@ -1,0 +1,346 @@
+[
+  {
+    "word":"Advertiser",
+    "definition":"Anyone with a product to sell."
+  },
+  {
+    "word":"Publisher",
+    "definition":"Anyonne with a website (app with ad space)."
+  },
+  {
+    "word":"Impression",
+    "definition":"A single instance of a banner ad being shown on a web page (app)."
+  },
+  {
+    "word":"Bidding",
+    "definition":"Comes from the fact that the price of impressions is set via an auction mechanism."
+  },
+  {
+    "word":"Ad Exchange",
+    "definition":"Role of the auctioner who mediates between advertisers and publishers."
+  },
+  {
+    "word":"Real-time",
+    "definition":"Stems from the fact that advertisers bidding in the auction must specify the price they are willing to pay for each impression separately for each impression, and within a strict time constraint: usually around one hundred milli-seconds, so the auction can run as the webpage on which the impression will be shown is loading."
+  },
+  {
+    "word":"Single-round",
+    "definition":"Participants can only bid once."
+  },
+  {
+    "word":"Sealed bid",
+    "definition":"The auctions are closed so participants can't see each others bid."
+  },
+  {
+    "word":"Second-price",
+    "definition":"The winner is the person who bids the highest but he pays whatever the amount of the next highest bid was."
+  },
+  {
+    "word":"Single-unit",
+    "definition":"Participants are bidding on single ad impressions at a time."
+  },
+  {
+    "word":"Perishable",
+    "definition":"impressions being auctioned are used immediately once bought and then they are gone. They have no resale value."
+  },
+  {
+    "word":"Uncertain valuations",
+    "definition":"Each bidder only has an estimate of how much it is worth to them to win this auction."
+  },
+  {
+    "word":"Independent valuations",
+    "definition":"The value of winning the auction to each bidder doesn't impact the value of winning the auction to any other bidder."
+  },
+  {
+    "word":"Private valuations",
+    "definition":"The value of winning the auction to each bidder i not known to others."
+  },
+  {
+    "word":"Reserve price (price floor)",
+    "definition":"a price below which publishers will not sell, so as not to enable advertisers to use RTB to undercut existing sales channels."
+  },
+  {
+    "word":"Demand Side Platform (DSP)",
+    "definition":"System that allows buyers of digital advertising inventory to manage multiple ad exchange and data exchange accounts through one interface. They manage the advertisement campaign of companies by performing real-time bidding. <b>They are impression buyers.</b>"
+  },
+  {
+    "word":"Supply Side Platform (SSP)",
+    "definition":"A technology platform to enable web publishers to manage their advertising space inventory, fill it with ads, and receive revenue. A supply-side platform interfaces on the publisher side to advertising networks and exchanges, which in turn interface to DSPs on the advertiser side. <b>They are impression sellers.</b>"
+  },
+  {
+    "word":"Cost-Per-Click (CPC)",
+    "definition":"An internet advertising model used to direct traffic to websites, in which an advertiser pays a publisher when the ad is clicked. CPC along with CPI and CPO, is used to assess the cost effectiveness and profitability of internet marketing. CPC has an advantage over CPI (cost-per-impression) in that it tells us something about how effective the advertising was. Clicks are a way to measure attention and interest. Once a certain number of web impressions are achieved, the quality and placement of the advertisement will affect click through ratio and the resulting pay-per-click. <br/><span style='padding-left:10em'>CPC ($) = Advertising cost ($) / Ads clicked (#)</span>"
+  },
+  {
+    "word":"Click Through Rate (CTR)",
+    "definition":"Ratio of users who click on a specific link to the number of total users who view a page, email or advertisementn. It's commonly used to measure the success of an online advertisement campaign for a particular website. The purpose of CTR is to measure the ratio of clicks to impression of an online ad.<br/><span style='padding-left:10em'>CTR = Click throughs (#) / Impressions (#)</span>"
+  },
+  {
+    "word":"Cost-Per-Impression (CPI)",
+    "definition":""
+  },
+  {
+    "word":"Cost-Per-Order (CPO)",
+    "definition":""
+  },
+  {
+    "word":"Cost-Per-Acquisition (CPA)",
+    "definition":""
+  },
+  {
+    "word":"Frequency Capping (FC)",
+    "definition":"Number of times an ad is shown to a user"
+  },
+  {
+    "word":"Recency Capping (RC)",
+    "definition":"Time period before an ad can be shown to the same user again."
+  },
+  {
+    "word":"Ad fatigue",
+    "definition":"When a user tires of an advertisement as it is seen more often."
+  },
+  {
+    "word":"Ad server",
+    "definition":"The technology that places ads on websites."
+  },
+  {
+    "word":"Animated GIF",
+    "definition":"A GIF (type of image file) which supports animations and allows a separate palette of 256 colors for each frame."
+  },
+  {
+    "word":"Banner",
+    "definition":"An online advertisement in the form of a graphic image that appears on a webpage."
+  },
+  {
+    "word":"Display network",
+    "definition":"Content websites that serve pay-per-click (PPC) adverts from the same provider, such as AdWords."
+  },
+  {
+    "word":"Google AdWords",
+    "definition":"Google's PPC program, which allows advertisers to display their adverts on relevant search results and across Google's content network."
+  },
+  {
+    "word":"Key Performance Indicator (KPI)",
+    "definition":"A metric that shows whether an objective is being achieved."
+  },
+  {
+    "word":"Marketplace Ads",
+    "definition":"Facebook ad space units, a type of advertising available on Facebook."
+  },
+  {
+    "word":"Paid search advertising",
+    "definition":"Usually refers to advertising on search engines, sometimes called PPC advertising. The advertiser pays only for each click on the advert."
+  },
+  {
+    "word":"Popup",
+    "definition":"Unrequested window that opens on top of the currently viewed window."
+  },
+  {
+    "word":"Tracking",
+    "definition":"Measuring the effectiveness of a campaign by collecting and evaluating statistics."
+  },
+  {
+    "word":"Tracking code",
+    "definition":"A piece of code that tracks a user's interaction and movement through a website."
+  },
+  {
+    "word":"Traditional media",
+    "definition":"Newspapers, magazines, television and publishing houses are the realm of traditional media."
+  },
+  {
+    "word":"Unique Selling Point (USP)",
+    "definition":"Unique selling point (or proposition) - what makes your offering different to your competitors'."
+  },
+  {
+    "word":"Viral video",
+    "definition":"This is a video that becomes immensely popular, leading to its spread through word-of-mouth (WOM) on the Internet via email, social netorks and other hosting websites."
+  },
+  {
+    "word":"Click path",
+    "definition":"The journey a user takes through a website."
+  },
+  {
+    "word":"Conversion",
+    "definition":"Completing an action that the website wants the user to take. Usually a conversion results in revenue for the brand in some way. Conversions include signing up to a newsletter or purchasing a product."
+  },
+  {
+    "word":"Conversion funnel",
+    "definition":"A defined path that visitors should take to reach the final objective."
+  },
+  {
+    "word":"Cookie",
+    "definition":"A small text file that is used to transfer information between browsers and web servers. They help web servers to provide the right content when it's requested."
+  },
+  {
+    "word":"Event",
+    "definition":"A step a visitor takes in the conversion process."
+  },
+  {
+    "word":"Log file",
+    "definition":"A text file created on the server each time a click takes place, capturing all activity on the website."
+  },
+  {
+    "word":"Referrer",
+    "definition":"The URL that originally generated the request for the current page."
+  },
+  {
+    "word":"Abode the fold",
+    "definition":"A term derived from the print advertising industry. It describes the area of a web page that's visible before the website visitor scrolls down the page. Note: There is no set pixel size for the fold; it will vart depending on the visitor's screen size and resolution."
+  },
+  {
+    "word":"Ad Serving",
+    "definition":"The delivery of an ad from a web server to then user's device, where the ads are displayed on a browser or an application."
+  },
+  {
+    "word":"Ad Unit",
+    "definition":"A size-and-format specification for an ad. The Interact Advertising Bureau, a trade association promoting digital ad standard and practices, has a set of <a href='https://www.iab.com/guidelines/iab-standard-ad-unit-portfolio/' >guidelines for sizes</a>."
+  },
+  {
+    "word":"Affiliate Marketing",
+    "definition":"Publishers have websites that get traffic and advertisers want to promote their products to the people who visit those websites. Affiliate marketing is an agreement between a publisher and an advertiser where the publisher receives compensation for every click delivered and/or every sale made of the advertiser's product or service."
+  },
+  {
+    "word":"Analytics",
+    "definition":"Data and statistics about the users of a website and how they interact with the website. Analytics can be used to uncover information about how many people browse a website, how much time they spend on the website and the specific actions they take on the website.<br/>This information is then used to target audiences, understand consumer behavior, improve user experience and optimize advertising campaigns."
+  },
+  {
+    "word":"Attribution",
+    "definition":"The goal of attribution is to identify which touch, of the many possible, is most (or partially) responsible for a conversion, so ROI can be calculated. First touch, last touch, and multi-touch are common attribution models. For example, a sale might begin with an ad, lead to an email campaign, and end with a phone call from a sales person. With first-touch attribution, the ad would get the entire redit for the sale. With last-touch, the phone call get all the credit. With multi-touch, the ad, the email and the phone call each get partial credit."
+  },
+  {
+    "word":"A/B Testing",
+    "definition":"A method used to compare different versions of digital ads or website landing pages in order to determine which one performs better. A typical A/B test for ads involves running the two ads simultaneously and then measuring which version gets a better response from the audience.<br/>When running an A/B test, only one element of the ads should be changed at a time. This is because the goal of these tests is to determine which variables generate the best responses from the audience. Once a winner is selected, it is then used as the next control and compared with another version to isolate and identify, the ad element that causes the audience to respond favorably to the ad."
+  },
+  {
+    "word":"Account-based Advertising",
+    "definition":"One tactic in an account-based marketing (ABM) strategy is the practice of serving display advertising only to specified titles at the target accounts you designate. For example, if you're marketing a new type of food packaging to General Mills, you might target multiple levels of responsibility, such as Senior Product Manager, Senior Product Marketer, VP of Product Marketing. Only people who work at GM and have these titles would be shown your ads."
+  },
+  {
+    "word":"Ad audience",
+    "definition":"The total number of people that have been exposed to or could possibly be exposed to an ad during any specific time period."
+  },
+  {
+    "word":"Ad banner",
+    "definition":"The most common form of digital advertising. These ad units, which include static graphics, videos and/or interactive rich media, are displayed on a web page or in an application."
+  },
+  {
+    "word":"Ad click",
+    "definition":"The action taken when a user interacts with an ad by either clicking on it with their mouse or by pressing enter on their keyboard."
+  },
+  {
+    "word":"Ad impressions",
+    "definition":"The number of times an ad has been served, regardless of whether the user has actually seen or interacted with the ad in any way."
+  },
+  {
+    "word":"Ad inventory",
+    "definition":"Website publishers serve ads to visitors when they visit a web page. The number of potential ads that can be served is considered their ad inventory. For example, if the Gotham Times averages 1,000 visits to their home page in any given week, and they have space for two display ads on their home page, then their potential ad inventory is 2,000 impressions per week."
+  },
+  {
+    "word":"Ad network",
+    "definition":"A vendor that connects advertisers to publishers. Ad networks act a single point of contact between publishers and advertisers, helping negotiate supply and demand."
+  },
+  {
+    "word":"Ad targeting",
+    "definition":"Delivering ads to a pre-selected audience based on various attributes, such as geography, demographics, psychographics, web browsing behavior and past purchases."
+  },
+  {
+    "word":"Bounce rate",
+    "definition":"A bounce is a website visit in which the visitor looked only at the single page they landed on, did not interact with it, and then left the site. The bounce rate expresses such visits as a percentage of the total visitor sessions, within a specific time frame."
+  },
+  {
+    "word":"Brand awareness",
+    "definition":"The extent or level to which a potential consumer can recall and identify a particular product or service. Increased brand awareness is one of the two customary important goals for a digital advertising campaign (the other being a conversion of some kind)."
+  },
+  {
+    "word":"Browser",
+    "definition":"A software program with a graphical interface that people use to navigate all the information available on the World Wide Web (Firefox, Chrome, Explorer)."
+  },
+  {
+    "word":"Call to Action (CTA)",
+    "definition":"A phrase included within an ad, or a graphic element such as a button, which invites the audience to take a certain action."
+  },
+  {
+    "word":"Channel",
+    "definition":"A distribution method; in advertising, it's an outlet used by advertisers to reach audiences, such as direct mail or radio. Digital advertising included channels such as display advertising social media advertising, and mobile in-app advertising."
+  },
+  {
+    "word":"Contextual Targeting",
+    "definition":"Selecting audiences based on the type of content being displayed on a particular webpage."
+  },
+  {
+    "word":"Conversion pixel",
+    "definition":"A 1x1 transparent image pixel placed on a web page which is triggered whenever a conversion occurs."
+  },
+  {
+    "word":"Conversion rate",
+    "definition":"Expressed as a percentage, a conversion rate can be calculated in two ways:<br/><ul><li>The first is by taking the number of users who completed the conversion and dividing it by the total number of impressions served.</li><li>The second, more common way, is by taking the number of users who completed the conversion and dividing it by the total number of users who clicked on the ad.</li></ul>"
+  },
+  {
+    "word":"Conversion tracking",
+    "definition":"Monitoring how many conversions have occurred during any specific time period, and analyzing which ads led to the conversions."
+  },
+  {
+    "word":"Cross-device Targeting",
+    "definition":"Serving the same buyer targeted ads across multiple devices"
+  },
+  {
+    "word":"Email Advertising",
+    "definition":"Clickable banner ads and links that appear within emails and e-newsletters."
+  },
+  {
+    "word":"Expandable Banner",
+    "definition":"Banners that increase in size when a user hovers over them."
+  },
+  {
+    "word":"Geographic Targeting",
+    "definition":"Selecting an audience for a campaign based on zip cordes, designated marketing area (DMA), cities, states and countries."
+  },
+  {
+    "word":"In-Stream Video Ads",
+    "definition":"Video ads played before, during or after the video content the publisher is delivering to the consumer."
+  },
+  {
+    "word":"Interstitial Ads",
+    "definition":"Ads that appear between two different content pages, served when a website visitor navigates from one page on a website to another. A best practice in mobile marketing is to avoid using an interstitial as a popup that blocks initial access."
+  },
+  {
+    "word":"Keyword",
+    "definition":"A specific word or phrase chosen by advertisers to trigger and include their ad within search engine results. The advertiser doing contextual advertising also chooses keywords, so that their ad will show up within pages that are returned for that keyword.<br/>In search advertising, the position of the ad within the results is determined by bidding. The highest bidder on a keyword usually gets the top position."
+  },
+  {
+    "word":"Landing Page",
+    "definition":"The web page users are directed to after they click on a display or paid search ad."
+  },
+  {
+    "word":"Lead",
+    "definition":"A potential customer; in digital advertising a lead is someone who has given you their contact information, often by signing up for a newsletter or filling out a form to download an eBook or other gated content."
+  },
+  {
+    "word":"Lookalike Audience",
+    "definition":"If you're like most businesss, you know who your customers are from a demographic and even psychographic point of view. A Lookalike Audience targets people who are similar to your existing customers which helps improve your conversion rates. You can use Lookalike Audiences when you're running online display, Facebook, mobile display or just about any other kind of digital marketing campaign."
+  },
+  {
+    "word":"Native Advertising",
+    "definition":"Any paid advertising that is indistinguishable in form from the channel being uer to present it."
+  },
+  {
+    "word":"Overlay",
+    "definition":"Advertising that floats over webpage content, graphics or videos Overlays cannot be blocked by ad-blocking software. One kind of overlay is called a lightbox. These ads being as a standard, scalable ad unit. If a user engages by hovering over the ad for some amount of time (often two seconds), the ad expands (to as much as near full-page), while the page behind it dims, increasing emphasis on the ad. Advertisers pay for the number of times the ad is expanded."
+  },
+  {
+    "word":"Programmatic Media Buying",
+    "definition":"(Aka Real-Time Bidding) An automated method buying media which ensures that advertisers are reaching the right person, at the right time, in the right place. The ads are bought based on a set of parameters pre-defined by the company placing the ads. Programmatic advertising uses data to make decisions about which ads to buy in real-time, which improves efficiencies and increases the effectiveness of the ads."
+  },
+  {
+    "word":"Reach",
+    "definition":"The total number of people who see your message. One person who is served your ad five times and clicks on it once yields a reach of 1,5 impressions, and a click-through rate of 20%."
+  },
+  {
+    "word":"Rich Media",
+    "definition":"Interactive media such as quizzes, games, and ads with video and special effects."
+  },
+  {
+    "word":"View Through",
+    "definition":"Ued to measure a consumer's behavior after they've been served an ad. If the view through window is set to 90 days, the consumer's relevant actions within that time period can be attributed to the ad.<br/>So if a customer purchases a pair of headphones within 90 days of being served an ad for those headphones, the ad will get partial or full attribution for that purchase."
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "type":"book",
+    "title":"The Advertised Mind",
+    "author":"Erik du Plessis",
+    "summary":"Book on the impact of ads on human memory.",
+    "score":4
+  },
+  {
+    "type":"website",
+    "url":"https://www.probabilitycourse.com/",
+    "summary":"Amazing online probability course (FREE)",
+    "score":5
+  },
+  {
+    "type":"book",
+    "title":"Mining of Massive Datasets",
+    "authors":["Jure Leskovec","Anand Rajaraman","Jeff Ullman"],
+    "url":"http://mmds.org/",
+    "summary":"Amazing book for managing massive datasets based on Stanford Computer Science course CS246: Mining Massive Datasets (FREE)",
+    "score":5
+  }
+]

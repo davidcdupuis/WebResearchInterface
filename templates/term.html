@@ -1,0 +1,7 @@
+{% extends "dictionary.html" %}
+{% block term %}
+<div id="{{ i.word }}" class="result mdl-card mdl-shadow--2dp" style="background-color:#EEEEEE;">
+  <div class="result-text-container mdl-shadow--2dp" style="background-color:#FF8A80; margin-bottom:5px;">{{ i.word }}</div>
+  <div class="result-text-container mdl-shadow--2dp" style="background-color: lightblue">{{ i.definition }}</div>
+</div>
+{% endblock %}
