@@ -1,10 +1,10 @@
 ## Real-Time Bidding
 
 ## Summary
-[1. Introduction](#intro)
-[2. How RTB Ad Serving Works](#works)
-[3. SSP to DSP Cookie Syncing Explained](#cookies)
-[4. Cookie syncing step-by-step](#syncing)
+[1. Introduction](#intro)  
+[2. How RTB Ad Serving Works](#works)  
+[3. SSP to DSP Cookie Syncing Explained](#cookies)  
+[4. Cookie syncing step-by-step](#syncing)  
 
 ### <a name="intro">1. Introduction</a>
 
@@ -23,6 +23,6 @@ RTB is distinguishable from static auctions by how it is a per-impression way of
 ### <a name="syncing">4. Cookie syncing step-by-step</a>
 
 
-Sources:
-  - Wikipedia
-  - Ad Ops Insider
+Sources:  
+  - Wikipedia  
+  - Ad Ops Insider  

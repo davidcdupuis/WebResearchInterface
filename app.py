@@ -66,7 +66,7 @@ def index():
 def articles():
     return render_template('articles.html',name='Articles')
 
-@app.route('/articles/add',methods=['POST'])
+@app.route('/articles/add', methods=['POST'])
 def addArticle():
     print "Add Article function"
     new_article = {
@@ -120,7 +120,7 @@ def addArticle():
 
     return redirect('/articles')
 
-@app.route('/articles/edit',methods=['POST'])
+@app.route('/articles/edit', methods=['POST'])
 def editArticle():
     new_article = {
         "id":"",
@@ -174,12 +174,11 @@ def visualisations():
 @app.route('/documentation')
 def documentation():
     # Get all the available documents and display information on page
-    with open('static/data/docs/info.json','r') as f:
+    with open('static/data/docs/info.json', 'r') as f:
         file_info = json.load(f)
+    return render_template('documentation.html', name='Documentation', file_info=file_info)
 
-    return render_template('documentation.html',name='Documentation',file_info=file_info)
-
-@app.route('/documentation/<file_name>',methods=['GET','POST'])
+@app.route('/documentation/<file_name>', methods=['GET','POST'])
 def display_doc(file_name):
     # get document by document name (id ?)
     print(file_name)
@@ -188,7 +187,7 @@ def display_doc(file_name):
         content = f.read()
     doc = Markup(markdown.markdown(content))
 
-    return render_template('document.html',content=doc)
+    return render_template('document.html', content=doc)
 
 # RESOURCES
 
@@ -199,19 +198,23 @@ def resources():
     return render_template('resources.html',name='Resourcers',resources=resources)
 
 # NOTES
+
 @app.route('/notes', methods=['GET','POST'])
 def notes():
     with open('static/data/notes.json') as f:
         notes = json.load(f)
     return render_template('notes.html',name='Notes',notes=notes)
 
+# QUESTIONS
+
 @app.route('/questions', methods=['GET','POST'])
 def questions():
     return render_template('questions.html',name='Questions')
 
+# DICTIONARY
+
 @app.route('/dictionary', methods=['GET','POST'])
 def dictionary():
-    print(vocabulary[0])
     return render_template('dictionary.html',name='Dictionary',data=vocabulary)
 
 #Test form

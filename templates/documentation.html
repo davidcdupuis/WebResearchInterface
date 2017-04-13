@@ -25,6 +25,9 @@
                 <div class="mdl-card__title">
                   <h2 class="mdl-card__title-text">{{ f.title }}</h2>
                 </div>
+                <div class="mdl-card__supporting-text" style="{% if f.category == 'Basics' %}background-color:lightblue;{% elif f.category == 'Business' %}background-color:#FF8A80;{% elif f.category == 'Machine Learning' %}background-color:#FFE0B2;{% else %}background-color:lightgreen;{% endif %}">
+                  {{ f.category }}
+                </div>
                 <div class="mdl-card__supporting-text">
                   {{ f.summary }}
                 </div>
@@ -40,5 +43,6 @@
         </main>
       </div>
     </div>
+    <script src="static/javascripts/modal-script.js"></script>
   </body>
 </html>

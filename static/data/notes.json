@@ -1,0 +1,12 @@
+[
+  {
+    "id":1,
+    "date":"01/01/2016",
+    "text":"<u>Transfer Learning:</u> deals with the learning problem where the learning data of the target task is expensive to get or easily outdate via transfering the knowledge learned from other tasks.<br/>Transfer learning scheme bases on logistic regression prediction models, where the parameters of ad click prediction model where restricted with a regularisation term from the ones of user web browsing prediction model."
+  },
+  {
+    "id":2,
+    "date":"01/01/2016",
+    "text":"Different ways a user may influence another user:<br/><br/>1. He sees an ad which leaves a good impression for the product or the brand, later when talking with a friend he sahres with him how much he likes the brand which encourages his friend to buy the product.<br/><br/>2. He sees an ad, clicks on it and thinks that a friend might be interested in it so he shares the link. If its on Facebook he may share an advertised post immediately. His friend clicks on the link and eventually converts.<br/><br/>3. He sees an ad, clicks on it and purchases the product. He his happy to have clicked on the ad because he is happy with the product he bought. He tells or or more friend who decide to buy the product as well.<br/><br/>4. A friend is told about a product or brand, he later sees an ad for it and decides to cick on it following his friend's advice and he ends up converting."
+  }
+]

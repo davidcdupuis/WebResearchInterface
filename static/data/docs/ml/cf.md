@@ -2,10 +2,10 @@
 
 Collaborative filtering is a method of making automatic predictions (filtering) about the interests of a user by collecting preferences or taste information from many users (collaborating). In the more general sense, collaborative filtering is the process of filtering for information or patterns using techniques involving collaboration among multiple agents, viewpoints, data sources, etc.
 
-CF often requires:
-- (1) Users' active participation
-- (2) An easy way to represent users' interests
-- (3) Algorithms that are able to match people with similar interests
+CF often requires:  
+- (1) Users' active participation  
+- (2) An easy way to represent users' interests  
+- (3) Algorithms that are able to match people with similar interests  
 
 A key problem of collaborative filtering is combining and weighting the preferences of user neighbors.
 
@@ -32,10 +32,10 @@ A key problem of collaborative filtering is combining and weighting the preferen
 
 Collaborative filtering based on the similarity between items calculated using people's ratings of those items.
 
-User-user cf had many problems:
-- systems performed poorly when they had many items but comparatively few ratings
-- computing similarities between all pairs of users was expensive
-- user profiles changed quickly and the entire system model had to be recomputed
+User-user cf had many problems:  
+- systems performed poorly when they had many items but comparatively few ratings  
+- computing similarities between all pairs of users was expensive  
+- user profiles changed quickly and the entire system model had to be recomputed  
 
-Source:
-- Wikipedia
+Source:  
+- Wikipedia  

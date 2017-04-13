@@ -2,7 +2,7 @@
   {
     "type":"book",
     "title":"The Advertised Mind",
-    "author":"Erik du Plessis",
+    "authors":["Erik du Plessis"],
     "summary":"Book on the impact of ads on human memory.",
     "score":4
   },
@@ -19,5 +19,29 @@
     "url":"http://mmds.org/",
     "summary":"Amazing book for managing massive datasets based on Stanford Computer Science course CS246: Mining Massive Datasets (FREE)",
     "score":5
+  },
+  {
+    "type":"blog",
+    "url":"http://datacratic.com/site/blog",
+    "summary":"",
+    "score":""
+  },
+  {
+    "type":"website",
+    "url":"https://github.com/wnzhang/rtb-papers",
+    "summary":"Repository belonging to Dr. Weinan Zhang entirely dedicated to Machine Learning algorithms for RTB.",
+    "score":4
+  },
+  {
+    "type":"website",
+    "url":"http://memorability.csail.mit.edu/",
+    "summary":"MIT website on large-scale image memorability.",
+    "score":0
+  },
+  {
+    "type":"website",
+    "url":"http://www.mobyaffiliates.com/blog/increasing-mobile-app-revenue-mobile-ad-servers/",
+    "summary":"Article on mobile ad serving",
+    "score":0
   }
 ]

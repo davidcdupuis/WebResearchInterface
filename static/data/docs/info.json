@@ -1,47 +1,55 @@
 [
   {
+    "category":"Basics",
     "title":"How RTB works",
     "filename":"how-rtb-works.md",
     "summary":"An introduction on Real-Time Bidding.",
     "path":"basics/how-rtb-works.md"
   },
   {
+    "category":"Basics",
     "title":"IAB Categories",
     "filename":"iab-categories.md",
     "summary":"A list of all IAB Categories.",
     "path":"basics/iab-categories.md"
   },
   {
+    "category":"Machine Learning",
     "title":"Algorithms",
     "filename":"algorithms.md",
     "summary":"A list of algorithms used for RTB.",
     "path":"ml/algorithms.md"
   },
   {
+    "category":"Machine Learning",
     "title":"Collaborative Filtering",
     "filename":"cf.md",
     "summary":"An introduction to collaborative filtering.",
     "path":"ml/cf.md"
   },
   {
+    "category":"Machine Learning",
     "title":"Multi-Armed Bandit",
     "filename":"mab.md",
     "summary":"An introduction to multi-armed bandit.",
     "path":"ml/mab.md"
   },
   {
+    "category":"Programmatic",
     "title":"Databases",
     "filename":"databases.md",
     "summary":"An introduction to databases.",
     "path":"programmatic/databases.md"
   },
   {
+    "category":"Programmatic",
     "title":"Graph Theory",
     "filename":"graph-theory.md",
     "summary":"An introduction to graph theory.",
     "path":"programmatic/databases.md"
   },
   {
+    "category":"Programmatic",
     "title":"Graph Databases",
     "filename":"graph-databases.md",
     "summary":"An Introduction to Graph Databases",

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="static/stylesheets/style.css">
     <!--Import jquery, D3, D3 graph script, graph css and more -->
   </head>
   <body>
@@ -146,8 +146,37 @@
                 <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
                   <div id="results">
                     {% for r in resources %}
-
-                    {% endfor%}
+                      {% if r.type == "book" %}
+                        <div class="result mdl-card mdl-shadow--2dp" style="background-color:#EEEEEE;">
+                          <div class="" style="background:transparent; margin-bottom:5px; font-size:20px; color:#FFC107">
+                            {% if ('score' in r)  or (r.score > 0) %}
+                              {% for i in range(0, r.score) %}
+                                <span>&starf;</span>
+                              {% endfor %}
+                            {% else %}
+                              <span style="color:black;">&star;</span>
+                            {% endif %}
+                          </div>
+                          <div class="result-text-container mdl-shadow--2dp" style="background-color:#FF8A80; margin-bottom:5px;">{{ r.title }}</div>
+                          <div class="result-text-container mdl-shadow--2dp" style="background-color:#ffca80; margin-bottom:5px;">{{ r.authors|join(', ') }}</div>
+                          <div class="result-text-container mdl-shadow--2dp" style="background-color: lightblue">{{ r.summary }}</div>
+                        </div>
+                      {% else %}
+                        <div class="result mdl-card mdl-shadow--2dp" style="background-color:#EEEEEE;">
+                          <div class="" style="background:transparent; margin-bottom:5px; font-size:20px; color:#FFC107">
+                            {% if ('score' in r)  or (r.score > 0) %}
+                              {% for i in range(0, r.score) %}
+                                <span>&starf;</span>
+                              {% endfor %}
+                            {% else %}
+                              <span style="color:black;">&star;</span>
+                            {% endif %}
+                          </div>
+                          <div class="result-text-container mdl-shadow--2dp" style="background-color:#FF8A80; margin-bottom:5px;">{{ r.url}}</div>
+                          <div class="result-text-container mdl-shadow--2dp" style="background-color: lightblue">{{ r.summary }}</div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
                   </div>
                   <dialog id="displayed-article" class="mdl-dialog">
                     <div class="mdl-grid" style="border-bottom:1px solid #E0E0E0;">
@@ -202,6 +231,5 @@
         </main>
       </div>
     </div>
-    <script src="javascripts/modal-script.js"></script>
   </body>
 </html>

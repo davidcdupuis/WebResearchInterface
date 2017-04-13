@@ -111,6 +111,16 @@
                   <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
                     <div id="results">
                       {% for n in notes %}
+                      <div class="result mdl-card mdl-shadow--2dp" style="background-color:#EEEEEE;">
+                        <div class="" style="background:transparent; margin-bottom:5px;">
+                          {{ n.date }} {# Convert date to written format #}
+                        </div>
+                        {% if n.text|length > 500 %}
+                          <div class="result-text-container mdl-shadow--2dp" style="background-color: lightblue">{{ n.text|truncate(497)|safe }}</div>
+                        {% else %}
+                          <div class="result-text-container mdl-shadow--2dp" style="background-color: lightblue">{{ n.text|safe }}</div>
+                        {% endif %}
+                      </div>
                       {% endfor %}
                     </div>
                     <dialog id="displayed-article" class="mdl-dialog">
