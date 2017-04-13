@@ -182,7 +182,6 @@ def documentation():
 @app.route('/documentation/<file_name>',methods=['GET','POST'])
 def display_doc(file_name):
     # get document by document name (id ?)
-
     print(file_name)
     filename = 'static/data/docs/' + request.form["path"]
     with open(filename, 'r') as f:
