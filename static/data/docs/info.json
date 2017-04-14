@@ -46,13 +46,20 @@
     "title":"Graph Theory",
     "filename":"graph-theory.md",
     "summary":"An introduction to graph theory.",
-    "path":"programmatic/databases.md"
+    "path":"programmatic/graph-theory.md"
   },
   {
     "category":"Programmatic",
     "title":"Graph Databases",
     "filename":"graph-databases.md",
     "summary":"An Introduction to Graph Databases",
-    "path":"programmatic/databases.md"
+    "path":"programmatic/graph-databases.md"
+  },
+  {
+    "category":"Machine Learning",
+    "title":"Multilevel Model",
+    "filename":"multilevel.md",
+    "summary":"Introduction to multilevel models",
+    "path":"ml/multilevel.md"
   }
 ]

@@ -211,7 +211,7 @@ function connectedNodes() {
 }
 
 // ----- MANAGE JSON DATA -----
-d3.json("data/data.json",function(error,graph){
+d3.json("static/data/data.json",function(error,graph){
   if (error) throw error;
 
   // Read the JSON data and create a dictionary of nodes and links based on references
