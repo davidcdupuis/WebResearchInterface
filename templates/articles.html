@@ -21,42 +21,44 @@
               <!--First column contains search menu-->
               <!-- SEARCH MENU -->
               <div class="mdl-card mdl-shadow--4dp">
-                <table class="mdl-data-table mdl-js-data-table" style="width:100%">
-                  <tr>
-                    <th colspan="3" class="mdl-data-table__cell--non-numeric">
-                      Search Menu
-                    </th>
-                  </tr>
-                  <tr>
-                    <td class="mdl-data-table__cell--non-numeric">
-                      Id
-                    </td>
-                    <td colspan="2">
-                      <input id="search-id" type="text" value=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="mdl-data-table__cell--non-numeric">
-                      Year
-                    </td>
-                    <td colspan="2">
-                      <input id="search-year" type="text" value=""/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <button id="reset" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-                        RESET
-                      </button>
-                    </td>
-                    <td></td>
-                    <td>
-                      <button id="search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                        Search
-                      </button>
-                    </td>
-                  </tr>
-                </table>
+                <form action="" method="get">
+                  <table class="mdl-data-table mdl-js-data-table" style="width:100%">
+                    <tr>
+                      <th colspan="3" class="mdl-data-table__cell--non-numeric">
+                        Search Menu
+                      </th>
+                    </tr>
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">
+                        Id
+                      </td>
+                      <td colspan="2">
+                        <input id="search-id" type="text" value=""/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">
+                        Year
+                      </td>
+                      <td colspan="2">
+                        <input id="search-year" type="text" value=""/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button id="reset" type="submit" name="reset" value="reset" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                          RESET
+                        </button>
+                      </td>
+                      <td></td>
+                      <td>
+                        <button id="search" type="submit" name="search" value="search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                          Search
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </form>
               </div>
               <!-- COLOR LEGEND -->
             </div>
@@ -147,52 +149,80 @@
               <div class="mdl-grid portfolio-max-width">
                 <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
                   <div id="results">
+                    {% for a in articles %}
+                    <div id="{{ a.id }}" class="result mdl-card mdl-shadow--2dp" style="background-color:{% if (a.problematic != '') and (a.solution != '') %} #FFE0B2 {% else %} {% endif %};">
+                      <div class="result-text-container mdl-shadow--2dp"style="">{{ a.title }}</div>
+                      <div class="mdl-grid" style="padding-left:0px; padding-right:0px; width:100%">
+                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">{{ a.year }}</div>
+                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center; background-color:{% if a.saved == 'yes' %} lightgreen {% else %} #FF8A80 {% endif %};">saved</div>
+                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center; background-color:{% if a.printed == 'yes' %} lightgreen {% else %} #FF8A80 {% endif %};">printed</div>
+                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">{{ a.score }}</div>
+                      </div>
+                      <div class="result-text-container mdl-shadow--2dp" style="">
+                        <span style="color:#EF6C00;">{{ a.problematic }}</span>
+                        <span style="color:green;">{{ a.solution }}</span>
+                      </div>
+                    </div>
+                    {% endfor %}
                   </div>
                   <dialog id="displayed-article" class="mdl-dialog">
-                    <div class="mdl-grid" style="border-bottom:1px solid #E0E0E0;">
-                      <div class="mdl-cell">
-                        <span id="display-dialog-score">
-                        </span>
+                      <div class="mdl-grid" style="border-bottom:1px solid #E0E0E0;">
+                        <div class="mdl-cell">
+                          <span id="display-dialog-score">
+                          </span>
+                        </div>
+                        <div id="display-dialog-id" class="mdl-cell" style="text-align:right;">
+                        </div>
                       </div>
-                      <div id="display-dialog-id" class="mdl-cell" style="text-align:right;">
+                      <h5 id="display-dialog-title" class="mdl-dialog__title" style="border-bottom:1px solid #E0E0E0;padding:10px;"></h5>
+                      <div class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
+                        <div id="display-dialog-year" class="mdl-cell mdl-cell--5-col"></div>
+                        <div id="display-dialog-saved" class="mdl-cell mdl-cell--1-col" style="background-color:lightgreen; border-radius:2px;text-align:center;">saved</div>
+                        <div id="display-dialog-printed" class="mdl-cell mdl-cell--1-col" style="background-color:lightgreen; border-radius:2px;text-align:center;">printed</div>
+                        <div id="display-dialog-read" class="mdl-cell mdl-cell--1-col" style="background-color:#FF8A80; border-radius:2px;text-align:center;">read</div>
                       </div>
-                    </div>
-                    <h5 id="display-dialog-title" class="mdl-dialog__title" style="border-bottom:1px solid #E0E0E0;padding:10px;"></h5>
-                    <div class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
-                      <div id="display-dialog-year" class="mdl-cell mdl-cell--5-col"></div>
-                      <div id="display-dialog-saved" class="mdl-cell mdl-cell--1-col" style="background-color:lightgreen; border-radius:2px;text-align:center;">saved</div>
-                      <div id="display-dialog-printed" class="mdl-cell mdl-cell--1-col" style="background-color:lightgreen; border-radius:2px;text-align:center;">printed</div>
-                      <div id="display-dialog-read" class="mdl-cell mdl-cell--1-col" style="background-color:#FF8A80; border-radius:2px;text-align:center;">read</div>
-                    </div>
-                    <!-- PROBLEM -->
-                    <div id="display-dialog-problem" style="border-bottom:1px solid #E0E0E0;padding:10px; color:#EF6C00;font-size:16px;">
-                    </div>
-                    <!-- SOLUTION -->
-                    <div id="display-dialog-solution" style="border-bottom:1px solid #E0E0E0;padding:10px;color:green;font-size:16px;">
-                    </div>
-                    <!-- AUTHORS -->
-                    <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Authors</div>
-                    <div id="display-dialog-authors" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
-                    </div>
-                    <!-- KEYWORDS -->
-                    <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Keywords</div>
-                    <div id="display-dialog-keywords" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
-                    </div>
-                    <!-- REFERENCES -->
-                    <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">References</div>
-                    <div id="display-dialog-references" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
-                    </div>
-                    <div class="mdl-dialog__actions">
-                      <button type="button" class="mdl-button mdl-button--primary mdl-js-button mdl-button--raised mdl-button--primary" style="background-color:">
-                        <a id="open-pdf" href="" target="_blank">OPEN PDF</a>
-                      </button>
-                      <button id="edit-article" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-                        EDIT
-                      </button>
-                      <button type="button" class="mdl-button cancel mdl-js-button mdl-button--raised">
-                        CLOSE
-                      </button>
-                    </div>
+                      <!-- PROBLEM -->
+                      <div id="display-dialog-problem" style="border-bottom:1px solid #E0E0E0;padding:10px; color:#EF6C00;font-size:16px;">
+                      </div>
+                      <!-- SOLUTION -->
+                      <div id="display-dialog-solution" style="border-bottom:1px solid #E0E0E0;padding:10px;color:green;font-size:16px;">
+                      </div>
+                      <!-- AUTHORS -->
+                      <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Authors</div>
+                      <div id="display-dialog-authors" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
+                      </div>
+                      <!-- KEYWORDS -->
+                      <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Keywords</div>
+                      <div id="display-dialog-keywords" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
+                      </div>
+                      <!-- REFERENCES -->
+                      <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">References</div>
+                      <div id="display-dialog-references" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
+                      </div>
+                      <div class="mdl-dialog__actions">
+                        <button type="button" class="mdl-button mdl-button--primary mdl-js-button mdl-button--raised mdl-button--primary" style="background-color:">
+                          <a id="open-pdf" href="" target="_blank">OPEN PDF</a>
+                        </button>
+                        <button id="edit-article" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                          EDIT
+                        </button>
+                        <button type="button" class="mdl-button cancel mdl-js-button mdl-button--raised">
+                          CLOSE
+                        </button>
+                        <button type="button" id="delete-article" class="mdl-button mdl-js-button mdl-button--raised" style="background-color:#d60404;margin-right: auto;">
+                          DELETE
+                        </button>
+                      </div>
+                  </dialog>
+                  <dialog id="confirm-delete-dialog" class="mdl-dialog">
+                    <form name="" action="/articles/delete" method="POST">
+                      <h5 class="mdl-dialog__title">Are you sure you want to delete this article?</h5>
+                      <input id="article-id" name="article-id" value="" type="hidden">
+                      <div class="mdl-dialog__actions">
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised" style="background-color:red;">YES</button>
+                        <button id="cancel-delete" type="button" class="mdl-button mdl-js-button mdl-button--raised" style="background-color:lightgreen;">NO</button>
+                      </div>
+                    </form>
                   </dialog>
                 </div>
               </div>

@@ -1,7 +1,13 @@
 [
   {
+    "question":"What is the probability of not knowing the user nor having placed the ad? knowing the user but not having placed the ad? knowing the user and not having placed the ad? Thus knowing the user and having placed the ad?",
+    "answer":"",
+    "asked-date":"24/04/2017",
+    "answered-date":""
+  },{
     "question":"",
     "answer":"",
-    "date":""
+    "asked-date":"",
+    "answered-date":""
   }
 ]

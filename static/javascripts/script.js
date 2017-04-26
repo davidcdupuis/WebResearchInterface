@@ -398,13 +398,14 @@ $(document).ready(function(){
     var result = sortResults(data.papers,'year',false);
 
     //var result = getPaperById(data.papers,'adaptive-targeting');
-    displayPapers(result);
+    //displayPapers(result);
 
     //listen to the user clicking on an article
     var article_dialog = document.querySelector('#displayed-article');
     var edit_dialog = document.querySelector('#edit-dialog');
     var dialog = document.querySelector('dialog');
     var showModalButton = document.querySelector('#add');
+    var confirmDelete = document.querySelector("#confirm-delete-dialog");
 
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
@@ -431,12 +432,24 @@ $(document).ready(function(){
       addPaperInfoToDisplayDialog(dialog_result);
       article_dialog.showModal();
 
+      $('#delete-article').click(function(){
+        //display validate delete dialog/form
+        var id = $('#display-dialog-id').text();
+        confirmDelete.showModal();
+        $('#article-id')[0].value = id;
+      });
+
+      $('#cancel-delete').click(function(){
+        confirmDelete.close();
+      });
+
       $('.cancel').click(function(){
         article_dialog.close();
         clearPaperInfoDialog();
       });
     });
 
+    /*
     $('#search').click(function(){
       //console.log($('#search-id').val());
       var id = $('#search-id').val();
@@ -452,7 +465,7 @@ $(document).ready(function(){
       //console.log(paper);
       clearResults();
       displayPapers(papers);
-    });
+    });*/
 
     $('#reset').click(function(){
       clearResults();

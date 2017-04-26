@@ -1,6 +1,6 @@
 # Research Web Interface
 
-The Research Web Interface (RWI) is a Node.js web interface designed specifically to answer my needs
+The Research Web Interface (RWI) is a Flask web interface designed specifically to answer my needs
 regarding real-time bidding research.
 
 The interface is organised into several sections:

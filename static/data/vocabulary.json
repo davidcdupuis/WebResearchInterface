@@ -342,5 +342,37 @@
   {
     "word":"View Through",
     "definition":"Ued to measure a consumer's behavior after they've been served an ad. If the view through window is set to 90 days, the consumer's relevant actions within that time period can be attributed to the ad.<br/>So if a customer purchases a pair of headphones within 90 days of being served an ad for those headphones, the ad will get partial or full attribution for that purchase."
+  },
+  {
+    "word":"On- and Off-line Algorithms",
+    "definition":"Conventional algorithms that are allowed to see all their data before producing an answer are called off-line. An on-line algorithm is required to make a response to each element in a stream immediately, with knowledge of only the past not the future elements in the stream."
+  },
+  {
+    "word":"Competitive ratio",
+    "definition":"We can measure the quality of an on-line algorithm by minimizing, over all possible input, the value of the result of the on-line algorithm compared with the value of the result of the best possible off-line algorithm."
+  },
+  {
+    "word":"Bipartite matching",
+    "definition":"This problem involves two sets of nodes a set of edges between members of the two sets. The goal is to find a maximal matching - as large a set of edges as possible that includes no node more than once."
+  },
+  {
+    "word":"The Balance Algorithm",
+    "definition":"This algorithm improves on the simple greedy algorithm. A query's ad is given to the advertiser who has bid on the query and has the largest remaining budget. Ties can be broken arbitrarily."
+  },
+  {
+    "word":"utility matrices",
+    "definition":"Recommendation systems deal with users and items. A utility matrix offers known information about the degree to which a user likes an item. Normally, most entries are unknown, and the essential problem of recommending items to users is predicting the values of the unknown entries based on the values of the known entries."
+  },
+  {
+    "word":"item profiles",
+    "definition":"These consist of features of items. Different kinds of items have different features on which content-based similarity can be based. Features of documents are typically important or unnusual words. Products have attributes such as screen size for a television. Media such as movies have a genre and details suh as actor or performer. Tags can also be used as features if they can be acquired from interested users."
+  },
+  {
+    "word":"user profiles",
+    "definition":"A content-based collaborative filtering system can construct profiles for users by measuring the frequency with which features appear in the items the user likes. We can then estimate the degree to which a user will like an item by the closeness of the item's profile to the user's profile."
+  },
+  {
+    "word":"",
+    "definition":""
   }
 ]
