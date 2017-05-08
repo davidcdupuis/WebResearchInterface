@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Research Web Interface</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="static/stylesheets/style.css">
+    <!--Import jquery, D3, D3 graph script, graph css and more -->
+  </head>
+  <body>
+    <div class="mdl-layout__container">
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        {% include "header.html" %}
+        <main class="mdl-layout__content">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--3-col">
+              <!--First column contains search menu-->
+              <!-- COLOR LEGEND -->
+            </div>
+            <div class="mdl-cell mdl-cell--5-col">
+              <!--Second column contains Add Article option and Results-->
+              <!-- BUTTON SECTION -->
+              <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp portfolio-max-width">
+                <div id="addArticle">
+                  <button  id="add" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored dialog-button" style="width:100%">
+                    SEARCH
+                  </button>
+                </div>
+              </div>
+              <!-- RESULTS SECTION -->
+              <div class="mdl-grid portfolio-max-width">
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                  <div id="results">
+                    {% for a in articles %}
+                    <div id="{{ a.id }}" class="result mdl-card mdl-shadow--2dp" style="">
+                      <div class="result-text-container mdl-shadow--2dp"style="">{{ a.title }}</div>
+                      <div class="mdl-grid" style="padding-left:0px; padding-right:0px; width:100%">
+                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">{{ a.year }}</div>
+                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">{{ a.where }}</div>
+                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">{{ a.authors }}</div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="static/javascripts/script.js"></script>
+  </body>
+</html>

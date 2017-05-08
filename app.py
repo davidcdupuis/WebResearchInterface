@@ -2,12 +2,14 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, render_template, request, redirect, url_for, jsonify, Markup
-import json
-import os
-import numpy
-import markdown
+import json, os, numpy, markdown
+import dblp, pandas as pd
+from neo4j.v1 import GraphDatabase, basic_auth
 
 app = Flask(__name__)
+
+driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j","1234"))
+session = driver.session()
 
 with open('static/data/vocabulary.json', 'r') as f:
     vocabulary = json.load(f)
@@ -64,14 +66,19 @@ def index():
 
 # ARTICLES
 
-@app.route('/articles')
+
+@app.route('/articles', methods = ['GET'])
 def display_articles():
     #print(articles["papers"][0])
     global articles
-    with open('static/data/data.json', 'r') as f:
-        articles = json.load(f)
+    #with open('static/data/data.json', 'r') as f:
+    #    articles = json.load(f)
+    # if a get method is inputed then query article info and send to page
+
+    articles = session.run("MATCH (art:Article) RETURN art.unique_key AS key, art.title AS title, art.year AS year, art.saved AS saved, art.printed AS printed, art.read AS read, art.problem AS problem, art.solution AS solution ORDER BY art.year DESC")
     print("All articles fetched.")
-    return render_template('articles.html', name = 'Articles', articles = articles["papers"])
+
+    return render_template('articles.html', name = 'Articles', articles = articles)#articles["papers"]
 
 @app.route('/articles/add', methods = ['POST'])
 def addArticle():
@@ -201,6 +208,12 @@ def deleteArticle():
     else:
         print("Delete form not found")
     return redirect('/articles')
+
+# DISCOVER
+
+@app.route('/discover')
+def discover():
+    return render_template('discover.html')
 
 # VISUALISATION
 

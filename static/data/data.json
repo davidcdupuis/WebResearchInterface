@@ -157,7 +157,7 @@
          "saved": "yes",
          "id": "cnn-ctr"
       },{
-         "author": ["Flavian Vasile","Damien Lefortier","Olivier Chapelle"],
+         "authors": ["Flavian Vasile","Damien Lefortier","Olivier Chapelle"],
          "read": "no",
          "problematic": "One of the most challeging problems is the prediction of ad click and conversion rates. One unadressed problem in the previous approaches is the existence of highly non-uniform misprediction costs.",
          "title": "Cost-sensitive Learning for Utility OPtimization in Online Advertising Auctions",
@@ -814,6 +814,17 @@
          "author": [],
          "read": "no",
          "problematic": "",
+         "title": "Ad quality on TV: Predicting television audience retention",
+         "solution": "",
+         "references": [],
+         "printed": "no",
+         "year": "2009",
+         "saved": "no",
+         "id": "tv-aud-retention"
+      },{
+         "author": [],
+         "read": "no",
+         "problematic": "",
          "title": "Modeling contextual factors of click rates",
          "solution": "",
          "references": [],
@@ -1290,6 +1301,17 @@
          "saved": "no",
          "id": "eff-sch-ad"
       },{
+         "title": "When does retargeting work? Timing information specificity in online advertising",
+         "read": "no",
+         "problematic": "",
+         "year": "2012",
+         "solution": "",
+         "references": [],
+         "printed": "no",
+         "authors": ["A. Lambrecht","C. Tucker"],
+         "saved": "no",
+         "id": "tim-info-spe-ad"
+      },{
          "title": "Smart useful, scary, creepy: perceptions of online behavioral advertising",
          "read": "no",
          "problematic": "",
@@ -1300,6 +1322,17 @@
          "authors": ["B. Ur","P.G. Leon","L.F. Cranor","R. Shay","Y. Wang"],
          "saved": "no",
          "id": "percept-onl-behave-targ"
+      },{
+         "title": "Fast aglorithms for finding matchings in lopsided bipartite graphs with applications to display ads",
+         "read": "no",
+         "problematic": "",
+         "year": "2010",
+         "solutiont": "",
+         "references": [],
+         "printed": "no",
+         "authors": [],
+         "saved": "no",
+         "id": "lopsided-bipartite-graph-algo"
       },{
          "title": "Quasi-proportional mechanisms: prior-free revenue maximization",
          "read": "no",
@@ -1366,6 +1399,17 @@
          "authors": [""],
          "saved": "no",
          "id": "stoch-l1-reg-loss"
+      },{
+         "title": "Gap filling in the plant kingdom-trait prediction using hierarchical probabilistic matrix factorization",
+         "read": "no",
+         "problematic": "",
+         "year": "2012",
+         "solution": "",
+         "references": [],
+         "printed": "no",
+         "authors": [],
+         "saved": "no",
+         "id": "plant-kingdom-pred-fm"
       },{
          "title": "Contextual collaborative filtering via hierarchical matrix factorization",
          "read": "no",
@@ -1490,6 +1534,28 @@
          "saved": "no",
          "id": "primal-dual-max-ad"
       },{
+         "title": "Daily deals: PRediction, social diffusion, and reputational ramifications",
+         "read": "no",
+         "problematic": "",
+         "year": "2012",
+         "solution": "",
+         "references": [],
+         "printed": "no",
+         "authors": [],
+         "saved": "no",
+         "id": "dayly-deal"
+      },{
+         "title": "The groupon effect on yelp ratings: a root cause analysis",
+         "read": "no",
+         "problematic": "",
+         "year": "2012",
+         "solution": "",
+         "references": [],
+         "printed": "no",
+         "authors": [],
+         "saved": "no",
+         "id": "groupon-yelp-effect"
+      },{
          "title": "Daily-deal selection for revenue maximization",
          "read": "no",
          "problematic": "",
@@ -1500,6 +1566,29 @@
          "authors": [],
          "saved": "no",
          "id": "daily-select-rev-max"
+      },{
+         "title": "Path to Purchase: A Mutually Exciting Point Process Model for Online Advertising and Conversion",
+         "read": "no",
+         "problematic": "",
+         "year": "2012",
+         "solution": "",
+         "references": [],
+         "printed": "no",
+         "authors": ["Lizhen Xu","Jason A. Duan","Andrew Whinston"],
+         "keywords": ["online advertising","purchase conversion","search advertisement","display advertisement","point process","mutually exciting"],
+         "saved": "no",
+         "id": "point-process-ad"
+      },{
+         "title": "Feature selection for high-dimensional data: A fast correlation-based filter solution",
+         "read": "no",
+         "problematic": "",
+         "year": "2003",
+         "solution": "",
+         "references": [],
+         "printed": "no",
+         "authors": [],
+         "saved": "no",
+         "id": "feat-select-high-dim"
       },{
          "title": "Sensitive Webpage Classification for Content Advertising",
          "read": "no",
@@ -1562,7 +1651,7 @@
          "read": "no",
          "problematic": "Click through rate (CTR) prediction of image ads is the core task of online display advertising systems, and logistic regression (LR) has been frequently applied as the prediction model. However, LR model lacks the ability of extracting complex and intrinsic nonlinear features from handcrafted high-dimensional image features, which limits its effectiveness.",
          "year": "2016",
-         "solution": "we introduce a novel deep neural network (DNN) based model that directly predicts the CTR of an image ad based on raw image pixels and other basic features in one step. The DNN model employs convolution layers to automatically extract representative visual features from images, and nonlinear CTR features are then learned from visual features and other contextual features by using fully-connected layers.",
+         "solution": "We introduce a novel deep neural network (DNN) based model that directly predicts the CTR of an image ad based on raw image pixels and other basic features in one step. The DNN model employs convolution layers to automatically extract representative visual features from images, and nonlinear CTR features are then learned from visual features and other contextual features by using fully-connected layers.",
          "url": "http://wnzhang.net/share/rtb-papers/deep-ctr-display.pdf",
          "references": [],
          "printed": "no",
@@ -1681,33 +1770,5 @@
          "keywords": ["television advertising","word-of-mouth","social tv"],
          "saved": "no",
          "id": "tv-ad-onl-wom"
-      },{
-         "title": "Predicting the influence of users' posted information for eWOM advertising in social networks",
-         "read": "no",
-         "problematic": "Facebook offers a service allowing marketers to utilize users' posts to automatically generate advertisements. The effectiveness of this spractice depends on the ability to accurately predict a post's influence on its readers.",
-         "year": "2014",
-         "solution": "We propose two models for predicting the influence of a post usingboth sources of influence, post-and author-related features, as predictors.",
-         "url": "http://ac.els-cdn.com/S1567422314000714/1-s2.0-S1567422314000714-main.pdf?_tid=daf2b80a-2692-11e7-a4c4-00000aab0f27&acdnat=1492779964_30ec5781f22f4aae661286c71e2d83c6",
-         "score": "",
-         "references": [""],
-         "printed": "no",
-         "authors": ["Yen-Liang Chen","Kwei Tang","Chia-Chi Wu","Ru-Yun Jheng"],
-         "keywords": ["social network","electronic word-of-mouth","ewom","influence","data mining","sentiment analysis"],
-         "saved": "no",
-         "id": "pred-infl-ewom-soc-net"
-      },{
-         "read": "no",
-         "problematic": "",
-         "year": "2016",
-         "references": [""],
-         "printed": "no",
-         "authors": [""],
-         "keywords": ["electronic word-of-mouth","social media","purchase intention","information acceptance model","ewom","information adoption model"],
-         "saved": "no",
-         "id": "ewom-infl-soc-media",
-         "title": "The influence of eWOM in social media on consumers' purchase intentions: An extended approach to information adoption",
-         "url": "http://www.sciencedirect.com/science/article/pii/S0747563216301650",
-         "solution": "",
-         "score": ""
       }]
 }

@@ -70,78 +70,154 @@
                   <button  id="add" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored dialog-button" style="width:100%">
                     + Add Article +
                   </button>
-                  <dialog id="edit-dialog" class="mdl-dialog" style="width:500px;">
+                  <dialog id="edit-dialog" class="mdl-dialog" style="position: absolute; margin-top:30px; margin-bottom:30px; width:800px;">
                     <form name="edit-dialog-article" id="edit-dialog-form" action="/articles/add" onsubmit="return validateForm()" method="post">
-                    <h3 id="edit-dialog-name" class="mdl-dialog__title">Add Article</h3>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input id="edit-dialog-title" class="mdl-textfield__input" type="text" name="title">
-                      <label class="mdl-textfield__label" for="edit-dialog-title">Title...</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input id="edit-dialog-id" class="mdl-textfield__input" type="text" name="id">
-                      <label class="mdl-textfield__label" for="edit-dialog-id">Id...</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input id="edit-dialog-url" class="mdl-textfield__input" type="text" name="url">
-                      <label class="mdl-textfield__label" for="edit-dialog-url">Article URL...</label>
-                    </div>
-                    <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input id="edit-dialog-year" class="mdl-textfield__input" type="text" name="year">
-                      <label class="mdl-textfield__label" for="edit-dialog-year">Year...</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input id="edit-dialog-score" class="mdl-textfield__input" type="text" name="score">
-                      <label class="mdl-textfield__label" for="edit-dialog-score">Score...</label>
-                    </div>
-                    <div class="mdl-grid">
-                      <div class="mdl-cell mdl-cell--4-col">
-                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="edit-dialog-saved">
-                          <input id="edit-dialog-saved" type="checkbox" id="checkbox-saved" class="mdl-checkbox__input" name="saved">
-                          <span class="mdl-checkbox__label" >Saved</span>
-                        </label>
+                      <div class = "mdl-grid" style = "width: 100%;">
+                        <!-- TITLE -->
+                        <div class="mdl-cell mdl-cell--9-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input id="edit-dialog-title" class="mdl-textfield__input" type="text" name="title">
+                          <label class="mdl-textfield__label" for="edit-dialog-title">Title</label>
+                        </div>
+                        <!-- YEAR -->
+                        <div  class="mdl-cell mdl-cell--3-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input id="edit-dialog-year" class="mdl-textfield__input" type="text" name="year">
+                          <label class="mdl-textfield__label" for="edit-dialog-year">Year</label>
+                        </div>
                       </div>
-                      <div class="mdl-cell mdl-cell--4-col">
-                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="edit-dialog-printed">
-                          <input id="edit-dialog-printed" type="checkbox" id="checkbox-printed" class="mdl-checkbox__input" name="printed">
-                          <span class="mdl-checkbox__label" >Printed</span>
-                        </label>
+                      <div class = "mdl-grid" style = "width: 100%;">
+                        <!-- LINK -->
+                        <div class="mdl-cell mdl-cell--8-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input id="edit-dialog-url" class="mdl-textfield__input" type="text" name="url">
+                          <label class="mdl-textfield__label" for="edit-dialog-url">Link</label>
+                        </div>
+                        <div class = "mdl-cell mdl-cell--2-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input id="edit-dialog-where" class = "mdl-textfield__input" type = "text" name = "where">
+                          <label class = "mdl-textfield__label" for="edit-dialog-where">Where</label>
+                        </div>
+                        <!-- SCORE -->
+                        <div class="mdl-cell mdl-cell--2-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input id="edit-dialog-score" class="mdl-textfield__input" type="text" name="score">
+                          <label class="mdl-textfield__label" for="edit-dialog-score">Score</label>
+                        </div>
                       </div>
-                      <div class="mdl-cell mdl-cell--4-col">
-                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="edit-dialog-read">
-                          <input id="edit-dialog-read" type="checkbox" id="checkbox-read" class="mdl-checkbox__input" name="read">
-                          <span class="mdl-checkbox__label" >Read</span>
-                        </label>
+                      <div class="mdl-grid" style = "width:100;">
+                        <!-- SAVED -->
+                        <div class="mdl-cell mdl-cell--3-col">
+                          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="edit-dialog-saved">
+                            <input id="dialog-saved" type="checkbox" class="mdl-checkbox__input" name="saved">
+                            <label for="dialog-saved">Saved</label>
+                          </label>
+                        </div>
+                        <!-- PRINTED -->
+                        <div class="mdl-cell mdl-cell--3-col">
+                          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="edit-dialog-printed">
+                            <input id="edit-dialog-printed" type="checkbox" class="mdl-checkbox__input" name="printed">
+                            <span class="mdl-checkbox__label" >Printed</span>
+                          </label>
+                        </div>
+                        <!-- READ -->
+                        <div class="mdl-cell mdl-cell--3-col">
+                          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="edit-dialog-read">
+                            <input id="edit-dialog-read" type="checkbox" class="mdl-checkbox__input" name="read">
+                            <span class="mdl-checkbox__label" >Read</span>
+                          </label>
+                        </div>
                       </div>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input id="edit-dialog-problem" class="mdl-textfield__input" type="text" name="problem">
-                      <label class="mdl-textfield__label" for="edit-dialog-problem">Problem...</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input id="edit-dialog-solution" class="mdl-textfield__input" type="text" name="solution">
-                      <label class="mdl-textfield__label" for="edit-dialog-solution">Solution...</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input id="edit-dialog-authors" class="mdl-textfield__input" type="text" name="authors">
-                      <label class="mdl-textfield__label" for="edit-dialog-authors">author1, author2, ...</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input id="edit-dialog-keywords" class="mdl-textfield__input" type="text" name="keywords">
-                      <label class="mdl-textfield__label" for="edit-dialog-keywords">keyword1, keyword2, ...</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input id="edit-dialog-references" class="mdl-textfield__input" type="text" name="references">
-                      <label class="mdl-textfield__label" for="edit-dialog-references">ref1, ref2, ...</label>
-                    </div>
-                    <div class="mdl-dialog__actions">
-                      <button type="submit" class="mdl-button save mdl-button--primary mdl-js-button mdl-button--raised mdl-button--primary" style="background-color:">
-                        SAVE
-                      </button>
-                      <button type="cancel" class="mdl-button cancel mdl-js-button mdl-button--raised">
-                        CANCEL
-                      </button>
-                    </div>
-                  </form>
+                      <!-- PROBLEM -->
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style = "width:100%;">
+                        <textarea id="edit-dialog-problem" class="mdl-textfield__input" type="text" rows = "2" name="problem"></textarea>
+                        <label class="mdl-textfield__label" for="edit-dialog-problem">Problem</label>
+                      </div>
+                      <!-- SOLUTION -->
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style = "width:100%;">
+                        <textarea id="edit-dialog-solution" class="mdl-textfield__input" type="text" rows = "2" name="solution"></textarea>
+                        <label class="mdl-textfield__label" for="edit-dialog-solution">Solution</label>
+                      </div>
+                      <!-- AUTHORS -->
+                      <div>
+                        <div class = "mdl-card__supporting-text" style = "padding:8px; padding-bottom:0px;">Authors</div>
+                        <div id = "edit-authors" class = "" style = "padding:10px;">
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input id="edit-dialog-authors" type="hidden">
+                          <input id="edit-dialog-author" class="mdl-textfield__input" type="text" name="authors">
+                          <label class="mdl-textfield__label" for="edit-dialog-author">Author Name</label>
+                        </div>
+                        <button id="addAuthor" type="button" class="mdl-button mdl-js-button mdl-button--raised author">
+                          Add Author
+                        </button>
+                      </div>
+                      <!-- KEYWORDS -->
+                      <div>
+                        <div class = "mdl-card__supporting-text" style = "padding:8px; padding-bottom:0px;">Keywords</div>
+                        <div id = "edit-keywords" class = "" style = "padding:10px;">
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input id="edit-dialog-keywords" type="hidden">
+                          <input id="edit-dialog-keyword" class="mdl-textfield__input" type="text" name="keywords">
+                          <label class="mdl-textfield__label" for="edit-dialog-keyword">Keyword</label>
+                        </div>
+                        <button id="addKeyword" type="button" class="mdl-button mdl-js-button mdl-button--raised keyword">
+                          Add Keyword
+                        </button>
+                      </div>
+                      <!-- REFERENCES -->
+                      <div>
+                        <div class = "mdl-card__supporting-text" style = "padding:8px; padding-bottom:0px;">References</div>
+                        <div id = "edit-references" class = "" style = "padding:10px;">
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input id="edit-dialog-references" type="hidden">
+                          <input id="edit-dialog-reference" class="mdl-textfield__input" type="text" name="references">
+                          <label class="mdl-textfield__label" for="edit-dialog-reference">Title, Year</label>
+                        </div>
+                        <button id="idReference" type="button" class="mdl-button mdl-js-button mdl-button--raised reference">
+                          Add Reference
+                        </button>
+                      </div>
+                      <!-- NOTES -->
+                      <div>
+                        <div class = "mdl-card__supporting-text" style = "padding:8px; padding-bottom:0px;">Notes</div>
+                        <div id = "" class = "mdl-grid" style = "padding:10px;">
+                          <div class="mdl-card mdl-shadow--4dp" style="width:100%; border: 8px solid #efc734;">
+                            <div class="mdl-card__title">
+                              <div class="mdl-card__subtitle-text">
+                                06/07/2017
+                              </div>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                              fugiat nulla pariatur.
+                              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </div>
+                            <div class = "mdl-card__actions mdl-card--border">
+                              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect delete-note" style="float:right;">
+                                DELETE
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input id="edit-dialog-references" class="mdl-textfield__input" type="text" name="references">
+                          <label class="mdl-textfield__label" for="edit-dialog-references">(date) + text</label>
+                        </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised note">
+                          Add Note
+                        </button>
+                      </div>
+                      <!-- ACTIONS -->
+                      <div class="mdl-dialog__actions" style="border-top:1px solid #c6c4c4;">
+                        <button type="submit" class="mdl-button save mdl-button--primary mdl-js-button mdl-button--raised mdl-button--primary" style="background-color:">
+                          SAVE
+                        </button>
+                        <button type="cancel" class="mdl-button cancel mdl-js-button mdl-button--raised">
+                          CANCEL
+                        </button>
+                      </div>
+                    </form>
                   </dialog>
                 </div>
               </div>
@@ -150,69 +226,110 @@
                 <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
                   <div id="results">
                     {% for a in articles %}
-                    <div id="{{ a.id }}" class="result mdl-card mdl-shadow--2dp" style="background-color:{% if (a.problematic != '') and (a.solution != '') %} #FFE0B2 {% else %} {% endif %};">
-                      <div class="result-text-container mdl-shadow--2dp"style="">{{ a.title }}</div>
-                      <div class="mdl-grid" style="padding-left:0px; padding-right:0px; width:100%">
-                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">{{ a.year }}</div>
-                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center; background-color:{% if a.saved == 'yes' %} lightgreen {% else %} #FF8A80 {% endif %};">saved</div>
-                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center; background-color:{% if a.printed == 'yes' %} lightgreen {% else %} #FF8A80 {% endif %};">printed</div>
-                        <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">{{ a.score }}</div>
-                      </div>
-                      <div class="result-text-container mdl-shadow--2dp" style="">
-                        <span style="color:#EF6C00;">{{ a.problematic }}</span>
-                        <span style="color:green;">{{ a.solution }}</span>
-                      </div>
+                    <div id="{{ a.key }}" class="result mdl-card mdl-shadow--2dp result" style="background-color:{% if (a.problematic != '') and (a.solution != '') %} #FFE0B2 {% else %} {% endif %};">
+                        <div class="result-text-container mdl-shadow--2dp" style="">{{ a.title }}</div>
+                        <div class="mdl-grid" style="padding-left:0px; padding-right:0px; width:100%">
+                          <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">{{ a.year }}</div>
+                          <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center; background-color:{% if a.saved == 'yes' %} lightgreen {% else %} #FF8A80 {% endif %};">saved</div>
+                          <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center; background-color:{% if a.printed == 'yes' %} lightgreen {% else %} #FF8A80 {% endif %};">printed</div>
+                          <div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">{{ a.score }}</div>
+                        </div>
+                        <div class="result-text-container mdl-shadow--2dp">
+                          <span style="color:#EF6C00;">{{ a.problem }}</span>
+                          <span style="color:green;">{{ a.solution }}</span>
+                        </div>
                     </div>
                     {% endfor %}
                   </div>
-                  <dialog id="displayed-article" class="mdl-dialog">
-                      <div class="mdl-grid" style="border-bottom:1px solid #E0E0E0;">
-                        <div class="mdl-cell">
-                          <span id="display-dialog-score">
-                          </span>
+                  <dialog id="displayed-article" class="mdl-dialog" style="width:90%" open>
+                    <div class="mdl-grid">
+                      <div class="mdl-cell">
+                        <span id="display-dialog-score"></span>
+                      </div>
+                      <div id = "display-dialog-where" class="mdl-cell" style="text-align:right;"></div>
+                    </div>
+                    <h5 id="display-dialog-title" class="mdl-dialog__title" style="padding:10px;">Adaptive Targeting for Online Advertisement</h5>
+                    <div class="mdl-grid">
+                      <div id="display-dialog-year" class="mdl-cell mdl-cell--5-col"></div>
+                      <div id="display-dialog-saved" class="mdl-cell mdl-cell--1-col" style="background-color:lightgreen; border-radius:2px;text-align:center;">saved</div>
+                      <div id="display-dialog-printed" class="mdl-cell mdl-cell--1-col" style="background-color:lightgreen; border-radius:2px;text-align:center;">printed</div>
+                      <div id="display-dialog-read" class="mdl-cell mdl-cell--1-col" style="background-color:#FF8A80; border-radius:2px;text-align:center;">read</div>
+                    </div>
+                    <!-- PROBLEM -->
+                    <div id="display-dialog-problem" style="padding:10px; color:#EF6C00;font-size:16px;"></div>
+                    <!-- SOLUTION -->
+                    <div id="display-dialog-solution" style="padding:10px;color:green;font-size:16px;"></div>
+                    <!-- AUTHORS -->
+                    <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Authors</div>
+                    <div id="display-dialog-authors" style="padding:10px;">
+                      <span class="mdl-chip mdl-chip--deletable author">
+                        <span class="mdl-chip__text">Andrey Pepelyshev</span>
+                      </span>
+                      <span class="mdl-chip mdl-chip--deletable author">
+                        <span class="mdl-chip__text">Yuri Staroselskiy</span>
+                      </span>
+                      <span class="mdl-chip mdl-chip--deletable author">
+                        <span class="mdl-chip__text">Anatoly Zhigljavsky</span>
+                      </span>
+                    </div>
+                    <!-- KEYWORDS -->
+                    <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Keywords</div>
+                    <div id="display-dialog-keywords" style="padding:10px;">
+                      <span class="mdl-chip mdl-chip--deletable keyword">
+                        <span class="mdl-chip__text">adaptive learning</span>
+                      </span>
+                      <span class="mdl-chip mdl-chip--deletable keyword">
+                        <span class="mdl-chip__text">online advertisement</span>
+                      </span>
+                      <span class="mdl-chip mdl-chip--deletable keyword">
+                        <span class="mdl-chip__text">click-through rate</span>
+                      </span>
+                    </div>
+                    <!-- REFERENCES -->
+                    <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">References</div>
+                    <div id="display-dialog-references" style="padding:10px;">
+                      <span class="mdl-chip mdl-chip--deletable reference">
+                        <span class="mdl-chip__text">massive-datasets</span>
+                      </span>
+                      <span class="mdl-chip mdl-chip--deletable reference">
+                        <span class="mdl-chip__text">web-scale-user-targ</span>
+                      </span>
+                      <span class="mdl-chip mdl-chip--deletable reference">
+                        <span class="mdl-chip__text">onl-ad-industry</span>
+                      </span>
+                    </div>
+                    <!-- NOTES -->
+                    <div class = "mdl-card__supporting-text" style="padding:8px; padding-bottom:0px;">Notes</div>
+                    <div id="displayed-dialog-notes" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
+                      <div class="mdl-card mdl-shadow--4dp" style="width:100%; border: 8px solid #efc734;">
+                        <div class="mdl-card__title">
+                          <div class="mdl-card__subtitle-text">
+                            06/07/2017
+                          </div>
                         </div>
-                        <div id="display-dialog-id" class="mdl-cell" style="text-align:right;">
+                        <div class="mdl-card__supporting-text">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                          fugiat nulla pariatur.
+                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </div>
                       </div>
-                      <h5 id="display-dialog-title" class="mdl-dialog__title" style="border-bottom:1px solid #E0E0E0;padding:10px;"></h5>
-                      <div class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
-                        <div id="display-dialog-year" class="mdl-cell mdl-cell--5-col"></div>
-                        <div id="display-dialog-saved" class="mdl-cell mdl-cell--1-col" style="background-color:lightgreen; border-radius:2px;text-align:center;">saved</div>
-                        <div id="display-dialog-printed" class="mdl-cell mdl-cell--1-col" style="background-color:lightgreen; border-radius:2px;text-align:center;">printed</div>
-                        <div id="display-dialog-read" class="mdl-cell mdl-cell--1-col" style="background-color:#FF8A80; border-radius:2px;text-align:center;">read</div>
-                      </div>
-                      <!-- PROBLEM -->
-                      <div id="display-dialog-problem" style="border-bottom:1px solid #E0E0E0;padding:10px; color:#EF6C00;font-size:16px;">
-                      </div>
-                      <!-- SOLUTION -->
-                      <div id="display-dialog-solution" style="border-bottom:1px solid #E0E0E0;padding:10px;color:green;font-size:16px;">
-                      </div>
-                      <!-- AUTHORS -->
-                      <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Authors</div>
-                      <div id="display-dialog-authors" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
-                      </div>
-                      <!-- KEYWORDS -->
-                      <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Keywords</div>
-                      <div id="display-dialog-keywords" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
-                      </div>
-                      <!-- REFERENCES -->
-                      <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">References</div>
-                      <div id="display-dialog-references" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
-                      </div>
-                      <div class="mdl-dialog__actions">
-                        <button type="button" class="mdl-button mdl-button--primary mdl-js-button mdl-button--raised mdl-button--primary" style="background-color:">
-                          <a id="open-pdf" href="" target="_blank">OPEN PDF</a>
-                        </button>
-                        <button id="edit-article" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-                          EDIT
-                        </button>
-                        <button type="button" class="mdl-button cancel mdl-js-button mdl-button--raised">
-                          CLOSE
-                        </button>
-                        <button type="button" id="delete-article" class="mdl-button mdl-js-button mdl-button--raised" style="background-color:#d60404;margin-right: auto;">
-                          DELETE
-                        </button>
-                      </div>
+                    </div>
+                    <div class="mdl-dialog__actions">
+                      <button type="button" class="mdl-button mdl-button--primary mdl-js-button mdl-button--raised mdl-button--primary" style="background-color:">
+                        <a id="open-pdf" href="" target="_blank">LINK</a>
+                      </button>
+                      <button id="edit-article" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                        EDIT
+                      </button>
+                      <button type="button" class="mdl-button cancel mdl-js-button mdl-button--raised">
+                        CLOSE
+                      </button>
+                      <button type="button" id="delete-article" class="mdl-button mdl-js-button mdl-button--raised" style="background-color:#d60404;margin-right: auto;">
+                        DELETE
+                      </button>
+                    </div>
                   </dialog>
                   <dialog id="confirm-delete-dialog" class="mdl-dialog">
                     <form name="" action="/articles/delete" method="POST">

@@ -372,6 +372,10 @@
     "definition":"A content-based collaborative filtering system can construct profiles for users by measuring the frequency with which features appear in the items the user likes. We can then estimate the degree to which a user will like an item by the closeness of the item's profile to the user's profile."
   },
   {
+    "word":"classification of items",
+    "definition":"An alternative to constructing a user profile is to build a classifier for each user, e.g., a decision tree. The row of the utility matrix for that user becomes the training data, and the classifier must predict the response of the user to all items, whether or not the row had an entry for that item."
+  },
+  {
     "word":"",
     "definition":""
   }

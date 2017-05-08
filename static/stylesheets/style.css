@@ -59,22 +59,20 @@ a {
 }
 
 .keyword{
-  text-align:center;
+  /*text-align:center;
   border-radius:2px;
-  padding:3px;
+  padding:3px;*/
   background-color:#EDE7F6;
 }
 
 .author{
-  text-align:center;
-  border-radius:2px;
-  padding:3px;
   background-color:#E3F2FD;
 }
 
 .reference{
-  text-align:center;
-  border-radius:2px;
-  padding:3px;
   background-color:#E0F2F1;
+}
+
+.note{
+  background-color:#EFC734;
 }

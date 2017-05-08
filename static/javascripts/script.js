@@ -197,24 +197,19 @@ function addPaperInfoToDisplayDialog(papers){
   if (paper.authors != undefined){
     var url = "";
     for (var i = 0; i < paper.authors.length; i++){
-      for (var j = 0; j < authorsList.length; j++){
-        if (authorsList[j].name == paper.authors[i]){
-          url = authorsList[j].blog;
-        }
-      }
-      $('#display-dialog-authors').append('<div class="mdl-cell mdl-cell--2-col mdl-shadow--2dp author"><a href="' + url + '" target="_blank">' + paper.authors[i]+ '</a></div>')
+      $('#display-dialog-authors').append('<span class="mdl-chip mdl-chip--deletable author"><span class="mdl-chip__text">' + paper.authors[i] + '</span></span>')
     }
   }
 
   if (paper.keywords != undefined){
     for (var i = 0; i < paper.keywords.length; i++){
-      $('#display-dialog-keywords').append('<div class="mdl-cell mdl-cell--2-col mdl-shadow--2dp keyword">' + paper.keywords[i] + '</div>');
+      $('#display-dialog-keywords').append('<span class="mdl-chip mdl-chip--deletable keyword"><span class="mdl-chip__text">' + paper.keywords[i] + '</span></span>');
     }
   }
 
   if(paper.references != undefined){
     for (var i = 0; i < paper.references.length; i++){
-      $('#display-dialog-references').append('<div class="mdl-cell mdl-cell--2-col mdl-shadow--2dp reference">' + paper.references[i] + '</div>');
+      $('#display-dialog-references').append('<span class="mdl-chip mdl-chip--deletable reference"><span class="mdl-chip__text">' + paper.references[i] + '</span></span>');
     }
   }
 
@@ -318,11 +313,6 @@ function clearInfoEditDialog(){
   $('#edit-dialog-title')[0].value        = '';
   $('#edit-dialog-title').parent().removeClass('is-dirty');
 
-  $('#edit-dialog-id').attr('value','');
-  $('#edit-dialog-id')[0].value           = '';
-  $('#edit-dialog-id').css('background-color','transparent');
-  $('#edit-dialog-id').parent().removeClass('is-dirty');
-
   $('#edit-dialog-url').attr('value','');
   $('#edit-dialog-url')[0].value          = '';
   $('#edit-dialog-url').parent().removeClass('is-dirty');
@@ -392,7 +382,6 @@ $(document).ready(function(){
 
   $.getJSON("static/data/authors.json",function(data){authorsList = data;});
 
-
   $.getJSON("static/data/data.json",function(data){
     //Initial sort, sorts papers by year
     var result = sortResults(data.papers,'year',false);
@@ -425,6 +414,10 @@ $(document).ready(function(){
       dialogPolyfill.registerDialog(dialog);
     }
 
+    $(document.body).on('click','.result', function(){
+      $(this).closest('form').trigger('submit');
+    })
+    /*
     $(document.body).on("click",".result",function(){
       //add paperInfo to Dialog
       var dialog_result = getPaperById(data.papers,this.id);
@@ -447,7 +440,7 @@ $(document).ready(function(){
         article_dialog.close();
         clearPaperInfoDialog();
       });
-    });
+    });*/
 
     /*
     $('#search').click(function(){
@@ -503,4 +496,32 @@ $(document).ready(function(){
     });
   });
 
+  $(document.body).on('click','#addAuthor',function(){
+    //add author chip to authors div + author value to authors hidden input
+    $('#edit-authors').append('<span class="mdl-chip mdl-chip--deletable author"><span class="mdl-chip__text">' + $('#edit-dialog-author').val() + '</span><button type="button" class="mdl-chip__action delete-author"><i class="material-icons">cancel</i></button></span>');
+    console.log("Author added");
+  });
+
+  $(document.body).on('click','#addKeyword',function(){
+    $('#edit-keywords').append('<span class="mdl-chip mdl-chip--deletable keyword"><span class="mdl-chip__text">' + $('#edit-dialog-keyword').val() + '</span><button type="button" class="mdl-chip__action delete-keyword"><i class="material-icons">cancel</i></button></span>');
+  });
+
+  $(document.body).on('click','#addReference',function(){
+    $('#edit-references').append('<span class="mdl-chip mdl-chip--deletable reference"><span class="mdl-chip__text">' + $('#edit-dialog-reference').val() + '</span><button type="button" class="mdl-chip__action delete-reference"><i class="material-icons">cancel</i></button></span>');
+  });
+
+  $(document.body).on('click','.delete-author',function(){
+    $(this).parent().remove();
+    //remove author name from list of authors as input
+  });
+
+  $(document.body).on('click','.delete-keyword',function(){
+    $(this).parent().remove();
+    //remove author name from list of keywords as input
+  });
+
+  $(document.body).on('click','.delete-reference',function(){
+    $(this).parent().remove();
+    //remove author name from list of references as input
+  });
 });
