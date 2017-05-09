@@ -21,12 +21,17 @@ a {
   width:900px;
   margin-top:50px;
   margin-bottom:50px;
-  max-height:800px;
 }
 
 #display-dialog-references{
-  height:100px;
-  overflow-y: scroll;
+  max-height:100px;
+  overflow-y: auto;
+}
+
+#display-dialog-notes{
+  width:100%;
+  max-height:500px;
+  overflow-y:auto;
 }
 
 .portfolio-max-width{
@@ -74,5 +79,7 @@ a {
 }
 
 .note{
-  background-color:#EFC734;
+  width:100%;
+  border: 8px solid #EFC734;
+  margin-top:10px;
 }

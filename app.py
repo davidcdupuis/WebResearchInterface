@@ -58,6 +58,29 @@ def find_article(id, data):
         if data[i]['id'] == id:
             return i
     return -1
+
+def get_article_info(result):
+    article = {}
+    for r in result:
+        print("Printing r: ")
+        print(r)
+        article['key']         = r['key']
+        article['link']        = r['link']
+        article['title']       = r['title']
+        article['year']        = r['year']
+        article['score']       = r['score']
+        article['where']       = r['where']
+        article['saved']       = r['saved']
+        article['printed']     = r['printed']
+        article['read']        = r['read']
+        article['problem']     = r['problem']
+        article['solution']    = r['solution']
+        article['authors']     = r['authors']
+        article['keywords']    = r['keywords']
+        article['references']  = r['references']
+        article['notes']       = r['notes']
+    return article
+
 # ROUTES
 
 @app.route('/')
@@ -65,7 +88,6 @@ def index():
     return render_template('index.html', name = 'Home')
 
 # ARTICLES
-
 
 @app.route('/articles', methods = ['GET'])
 def display_articles():
@@ -209,6 +231,31 @@ def deleteArticle():
         print("Delete form not found")
     return redirect('/articles')
 
+@app.route('/articles/display', methods = ['POST'])
+def display_article():
+    try:
+        result = session.run("MATCH (art:Article {unique_key: {key_variable}}), (art)<-[:WROTE]-(a:Author) RETURN art.unique_key as key, art.title AS title, art.year AS year,art.score as score, art.where as where, art.saved as saved, art.printed as printed, art.read as read, art.link as link, art.problem as problem, art.solution as solution, art.keywords as keywords, art.references as references, art.notes as notes, COLLECT(a.full_name) AS authors",key_variable = eval(request.form['key']))
+    except Exception as e:
+        print('*** ', e)
+        session.rollback()
+
+    article = get_article_info(result)
+    # useless
+    return jsonify({
+        'key': article['key'],
+        'title': article['title'],
+        'year': article['year'],
+        'where': article['where'],
+        'saved': article['saved'],
+        'printed': article['printed'],
+        'read': article['read'],
+        'problem': article['problem'],
+        'solution': article['solution'],
+        'authors': article['authors'],
+        'references': article['references'],
+        'keywords': article['keywords'],
+        'notes':    article['notes']
+    })
 # DISCOVER
 
 @app.route('/discover')

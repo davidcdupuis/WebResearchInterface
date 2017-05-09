@@ -137,6 +137,18 @@
                       <div>
                         <div class = "mdl-card__supporting-text" style = "padding:8px; padding-bottom:0px;">Authors</div>
                         <div id = "edit-authors" class = "" style = "padding:10px;">
+                          <span class="mdl-chip mdl-chip--deletable author">
+                            <span class="mdl-chip__text">Weinan Zhang</span>
+                            <button type="button" class="mdl-chip__action delete-author"><i class="material-icons">cancel</i></button>
+                          </span>
+                          <span class="mdl-chip mdl-chip--deletable author">
+                            <span class="mdl-chip__text">Jun Wang</span>
+                            <button type="button" class="mdl-chip__action delete-author"><i class="material-icons">cancel</i></button>
+                          </span>
+                          <span class="mdl-chip mdl-chip--deletable author">
+                            <span class="mdl-chip__text">Shuai Yuan</span>
+                            <button type="button" class="mdl-chip__action delete-author"><i class="material-icons">cancel</i></button>
+                          </span>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                           <input id="edit-dialog-authors" type="hidden">
@@ -178,7 +190,7 @@
                       <!-- NOTES -->
                       <div>
                         <div class = "mdl-card__supporting-text" style = "padding:8px; padding-bottom:0px;">Notes</div>
-                        <div id = "" class = "mdl-grid" style = "padding:10px;">
+                        <div id = "" style = "padding:10px;">
                           <div class="mdl-card mdl-shadow--4dp" style="width:100%; border: 8px solid #efc734;">
                             <div class="mdl-card__title">
                               <div class="mdl-card__subtitle-text">
@@ -204,7 +216,7 @@
                           <input id="edit-dialog-references" class="mdl-textfield__input" type="text" name="references">
                           <label class="mdl-textfield__label" for="edit-dialog-references">(date) + text</label>
                         </div>
-                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised note">
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised" style = "background-color:#EFC734;">
                           Add Note
                         </button>
                       </div>
@@ -213,7 +225,7 @@
                         <button type="submit" class="mdl-button save mdl-button--primary mdl-js-button mdl-button--raised mdl-button--primary" style="background-color:">
                           SAVE
                         </button>
-                        <button type="cancel" class="mdl-button cancel mdl-js-button mdl-button--raised">
+                        <button type="cancel" class="mdl-button mdl-js-button mdl-button--raised cancel">
                           CANCEL
                         </button>
                       </div>
@@ -241,14 +253,14 @@
                     </div>
                     {% endfor %}
                   </div>
-                  <dialog id="displayed-article" class="mdl-dialog" style="width:90%" open>
+                  <dialog id="displayed-article" class="mdl-dialog">
                     <div class="mdl-grid">
                       <div class="mdl-cell">
                         <span id="display-dialog-score"></span>
                       </div>
                       <div id = "display-dialog-where" class="mdl-cell" style="text-align:right;"></div>
                     </div>
-                    <h5 id="display-dialog-title" class="mdl-dialog__title" style="padding:10px;">Adaptive Targeting for Online Advertisement</h5>
+                    <h5 id="display-dialog-title" class="mdl-dialog__title" style="padding:10px;"></h5>
                     <div class="mdl-grid">
                       <div id="display-dialog-year" class="mdl-cell mdl-cell--5-col"></div>
                       <div id="display-dialog-saved" class="mdl-cell mdl-cell--1-col" style="background-color:lightgreen; border-radius:2px;text-align:center;">saved</div>
@@ -262,46 +274,19 @@
                     <!-- AUTHORS -->
                     <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Authors</div>
                     <div id="display-dialog-authors" style="padding:10px;">
-                      <span class="mdl-chip mdl-chip--deletable author">
-                        <span class="mdl-chip__text">Andrey Pepelyshev</span>
-                      </span>
-                      <span class="mdl-chip mdl-chip--deletable author">
-                        <span class="mdl-chip__text">Yuri Staroselskiy</span>
-                      </span>
-                      <span class="mdl-chip mdl-chip--deletable author">
-                        <span class="mdl-chip__text">Anatoly Zhigljavsky</span>
-                      </span>
                     </div>
                     <!-- KEYWORDS -->
                     <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Keywords</div>
                     <div id="display-dialog-keywords" style="padding:10px;">
-                      <span class="mdl-chip mdl-chip--deletable keyword">
-                        <span class="mdl-chip__text">adaptive learning</span>
-                      </span>
-                      <span class="mdl-chip mdl-chip--deletable keyword">
-                        <span class="mdl-chip__text">online advertisement</span>
-                      </span>
-                      <span class="mdl-chip mdl-chip--deletable keyword">
-                        <span class="mdl-chip__text">click-through rate</span>
-                      </span>
                     </div>
                     <!-- REFERENCES -->
                     <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">References</div>
                     <div id="display-dialog-references" style="padding:10px;">
-                      <span class="mdl-chip mdl-chip--deletable reference">
-                        <span class="mdl-chip__text">massive-datasets</span>
-                      </span>
-                      <span class="mdl-chip mdl-chip--deletable reference">
-                        <span class="mdl-chip__text">web-scale-user-targ</span>
-                      </span>
-                      <span class="mdl-chip mdl-chip--deletable reference">
-                        <span class="mdl-chip__text">onl-ad-industry</span>
-                      </span>
                     </div>
                     <!-- NOTES -->
                     <div class = "mdl-card__supporting-text" style="padding:8px; padding-bottom:0px;">Notes</div>
-                    <div id="displayed-dialog-notes" class="mdl-grid" style="border-bottom:1px solid #E0E0E0;padding:10px;">
-                      <div class="mdl-card mdl-shadow--4dp" style="width:100%; border: 8px solid #efc734;">
+                    <div id="display-dialog-notes" style="border-bottom:1px solid #E0E0E0;padding:10px;">
+                      <div class="mdl-card mdl-shadow--4dp note">
                         <div class="mdl-card__title">
                           <div class="mdl-card__subtitle-text">
                             06/07/2017
@@ -323,7 +308,7 @@
                       <button id="edit-article" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                         EDIT
                       </button>
-                      <button type="button" class="mdl-button cancel mdl-js-button mdl-button--raised">
+                      <button type="cancel" class="mdl-button mdl-js-button mdl-button--raised cancel">
                         CLOSE
                       </button>
                       <button type="button" id="delete-article" class="mdl-button mdl-js-button mdl-button--raised" style="background-color:#d60404;margin-right: auto;">
@@ -337,7 +322,7 @@
                       <input id="article-id" name="article-id" value="" type="hidden">
                       <div class="mdl-dialog__actions">
                         <button type="submit" class="mdl-button mdl-js-button mdl-button--raised" style="background-color:red;">YES</button>
-                        <button id="cancel-delete" type="button" class="mdl-button mdl-js-button mdl-button--raised" style="background-color:lightgreen;">NO</button>
+                        <button id="cancel-delete" type="button" class="mdl-button mdl-js-button mdl-button--raised cancel" style="background-color:lightgreen;">NO</button>
                       </div>
                     </form>
                   </dialog>

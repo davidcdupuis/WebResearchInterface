@@ -1,5 +1,5 @@
 //GLOBAL VARIABLES
-var authorsList;
+
 //var socket = io('ws://localhost:3000/');
 
 /**
@@ -70,91 +70,11 @@ function validateSave(){
   }
 }
 
-function sortResults(data, prop, asc) {
-    data.sort(function(a, b) {
-        if (asc) {
-            return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
-        } else {
-            return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
-        }
-    });
-    return data;
-}
-
-function getPaperById(papers, id){
-  for(var i = 0; i < papers.length; i++){
-    if( papers[i].id == id){
-      //console.log(papers[i]);
-      return [papers[i]]; //we must return a list of results, even if just one result
-    }
-  }
-  console.log("No papers found!");
-}
-
-function getPapersByYear(papers, year){
-  var filteredPapers = [];
-  for(var i = 0; i < papers.length; i++){
-    //console.log(papers[i].year);
-    if(papers[i].year != undefined && papers[i].year == year){
-
-      filteredPapers.push(papers[i]);
-    }
-  }
-  console.log(filteredPapers);
-  return filteredPapers;
-}
-
-// Takes papers as input and displays them in results
-function displayPapers(papers){
-  for (var i = 0; i < papers.length ; i++){
-    //initialize basic variables
-    var background = "#EEEEEE";
-    var summary = papers[i].problematic + " " + papers[i].solution;
-    var authors = "";
-    var saved = "#FF8A80";
-    var printed = "#FF8A80";
-    var score = "not defined";
-    var problem = "";
-    var solution = "";
-
-    //redefine necessary variables
-    if (papers[i].read == 'yes'){
-      background = "#C8E6C9";
-    } else if(papers[i].problematic != '' && papers[i].solution != ''){
-      background = "#FFE0B2";
-      problem = '<span style="color:#EF6C00;">' + papers[i].problematic + ' </span>';
-      solution = '<span style="color:green;">' + papers[i].solution + '</span>';
-    }
-
-    if (papers[i].authors != undefined){
-      for (var j = 0; j < papers[i].authors.length - 1; j++){
-        authors += papers[i].authors[j] + " / ";
-      }
-      authors += papers[i].authors[papers[i].authors.length - 1];
-    }
-
-    if (papers[i].saved == 'yes') saved = 'lightgreen';
-    if (papers[i].printed == 'yes') printed = 'lightgreen';
-    if (papers[i].score != undefined) score = papers[i].score;
-
-  $('#results').append('' +
-  '<div id="' + papers[i].id + '" class="result mdl-card mdl-shadow--2dp" style="background-color:' + background + ';">'+
-    '<div class="result-text-container mdl-shadow--2dp"style="">' + papers[i].title + '</div>'+
-    '<div class="mdl-grid" style="padding-left:0px; padding-right:0px; width:100%">'+
-      '<div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">' + papers[i].year + ' </div>'+
-      '<div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center; background-color:' + saved + ';">saved</div>'+
-      '<div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center; background-color:' + printed + ';">printed</div>'+
-      '<div class="result-text-container mdl-cell mdl-cell--3-col mdl-shadow--2dp" style="text-align:center;">' + score + '</div>'+
-    '</div>'+
-    '<div class="result-text-container mdl-shadow--2dp" style="">' + problem + solution + '</div>'+
-  '</div>'+
-  '');
-  }
-}
-
-function addPaperInfoToDisplayDialog(papers){
-  var paper = papers[0];
-
+/**
+* Function that gets a paper and displays it's info in a
+* non-editable article dialog
+*/
+function addPaperInfoToDisplayDialog(paper){
   //initialize variables
   var background = "#EEEEEE";
   var saved = "#FF8A80";
@@ -171,8 +91,9 @@ function addPaperInfoToDisplayDialog(papers){
     $('#display-dialog-score').append('<span style="color:black;">&star;</span>');
   }
 
-  $('#display-dialog-id').text(paper.id);
+  $('#display-dialog-id').text(paper.key);
   $('#display-dialog-title').text(paper.title);
+  $('#display-dialog-where').text(paper.where);
   $('#display-dialog-year').text(paper.year);
   if (paper.saved == 'yes'){
     $('#display-dialog-saved').css('background-color','lightgreen');
@@ -192,38 +113,41 @@ function addPaperInfoToDisplayDialog(papers){
     $('#display-dialog-read').css('background-color','#FF8A80');
   }
 
-  $('#display-dialog-problem').append('<span style="color:#EF6C00;">' + paper.problematic + ' </span>');
+  $('#display-dialog-problem').append('<span style="color:#EF6C00;">' + paper.problem + ' </span>');
   $('#display-dialog-solution').append('<span style="color:green;">' + paper.solution + '</span>');
   if (paper.authors != undefined){
     var url = "";
     for (var i = 0; i < paper.authors.length; i++){
-      $('#display-dialog-authors').append('<span class="mdl-chip mdl-chip--deletable author"><span class="mdl-chip__text">' + paper.authors[i] + '</span></span>')
+      $('#display-dialog-authors').append('<span class="mdl-chip author"><span class="mdl-chip__text">' + paper.authors[i] + '</span></span>')
     }
   }
 
   if (paper.keywords != undefined){
     for (var i = 0; i < paper.keywords.length; i++){
-      $('#display-dialog-keywords').append('<span class="mdl-chip mdl-chip--deletable keyword"><span class="mdl-chip__text">' + paper.keywords[i] + '</span></span>');
+      $('#display-dialog-keywords').append('<span class="mdl-chip keyword"><span class="mdl-chip__text">' + paper.keywords[i] + '</span></span>');
     }
   }
 
   if(paper.references != undefined){
     for (var i = 0; i < paper.references.length; i++){
-      $('#display-dialog-references').append('<span class="mdl-chip mdl-chip--deletable reference"><span class="mdl-chip__text">' + paper.references[i] + '</span></span>');
+      $('#display-dialog-references').append('<span class="mdl-chip reference"><span class="mdl-chip__text">' + paper.references[i] + '</span></span>');
     }
   }
 
   if(paper.url != undefined){
-    $('#open-pdf').attr("href",paper.url);
+    $('#open-pdf').attr("href",paper.link);
   }
 }
 
+/**
+* Function that adds the info of the desired paper to an
+* editable article dialog to await for modifications
+*/
 function addPaperInfoToEditDialog(papers){
-  var paper = papers[0];
   //console.log("Enter function addPaperInfoToEditDialog")
   $('#edit-dialog-form').attr("action","/articles/edit");
   //ID
-  $('#edit-dialog-id').attr('value',paper.id);
+  $('#edit-dialog-id').attr('value',paper.key);
   $('#edit-dialog-id')[0].value = paper.id;
   $('#edit-dialog-id').prop('disabled',true);
   $('#edit-dialog-id').css('background-color','#F8F8FF');
@@ -306,6 +230,9 @@ function addPaperInfoToEditDialog(papers){
   }
 }
 
+/**
+* Function that clears are the info from the Edit Dialog
+*/
 function clearInfoEditDialog(){
   $('#edit-dialog-form').attr("action","/articles/add");
 
@@ -350,10 +277,9 @@ function clearInfoEditDialog(){
   $('#edit-dialog-references').parent().removeClass('is-dirty');
 }
 
-function clearResults(){
-  $('#results').text('');
-}
-
+/**
+* Function that clears all the info from the Displayed Dialog
+*/
 function clearPaperInfoDialog(){
   $('#display-dialog-score').text('');
   $('#display-dialog-id').text('');
@@ -366,6 +292,9 @@ function clearPaperInfoDialog(){
   $('#display-dialog-references').text('');
 }
 
+/**
+* Function that verifies if necessary info in form to be submitted
+*/
 function validateForm(){
   id     = document.forms["edit-dialog-article"]["id"].value;
   title  = document.forms["edit-dialog-article"]["title"].value;
@@ -379,149 +308,96 @@ function validateForm(){
 }
 
 $(document).ready(function(){
+  var article_dialog = document.querySelector('#displayed-article');
+  var edit_dialog = document.querySelector('#edit-dialog');
+  var confirmDelete = document.querySelector("#confirm-delete-dialog");
+  //var dialog = document.querySelector('dialog');
+  var showModalButton = document.querySelector('#add');
 
-  $.getJSON("static/data/authors.json",function(data){authorsList = data;});
+  $('#add').click(function() {
+    clearInfoEditDialog();
+    $('#edit-dialog-form').attr("action","/articles/add");
+    edit_dialog.showModal();
 
-  $.getJSON("static/data/data.json",function(data){
-    //Initial sort, sorts papers by year
-    var result = sortResults(data.papers,'year',false);
-
-    //var result = getPaperById(data.papers,'adaptive-targeting');
-    //displayPapers(result);
-
-    //listen to the user clicking on an article
-    var article_dialog = document.querySelector('#displayed-article');
-    var edit_dialog = document.querySelector('#edit-dialog');
-    var dialog = document.querySelector('dialog');
-    var showModalButton = document.querySelector('#add');
-    var confirmDelete = document.querySelector("#confirm-delete-dialog");
-
-    if (! dialog.showModal) {
-      dialogPolyfill.registerDialog(dialog);
-    }
-
-    showModalButton.addEventListener('click', function() {
-      clearInfoEditDialog();
-      $('#edit-dialog-form').attr("action","/articles/add");
-      dialog.showModal();
-    });
-
-    dialog.querySelector('.cancel').addEventListener('click', function() {
-      dialog.close();
-    });
-
-    if (! article_dialog.showModal) {
-      dialogPolyfill.registerDialog(dialog);
-    }
-
-    $(document.body).on('click','.result', function(){
-      $(this).closest('form').trigger('submit');
-    })
-    /*
-    $(document.body).on("click",".result",function(){
-      //add paperInfo to Dialog
-      var dialog_result = getPaperById(data.papers,this.id);
-
-      addPaperInfoToDisplayDialog(dialog_result);
-      article_dialog.showModal();
-
-      $('#delete-article').click(function(){
-        //display validate delete dialog/form
-        var id = $('#display-dialog-id').text();
-        confirmDelete.showModal();
-        $('#article-id')[0].value = id;
-      });
-
-      $('#cancel-delete').click(function(){
-        confirmDelete.close();
-      });
-
-      $('.cancel').click(function(){
-        article_dialog.close();
-        clearPaperInfoDialog();
-      });
-    });*/
-
-    /*
-    $('#search').click(function(){
-      //console.log($('#search-id').val());
-      var id = $('#search-id').val();
-      var year = $('#search-year').val();
-      var papers = result;
-
-      if (id != undefined && id != ''){
-        var papers = getPaperById(data.papers, id);
-      }
-      if (year != undefined && year != ''){
-        var papers = getPapersByYear(data.papers, year);
-      }
-      //console.log(paper);
-      clearResults();
-      displayPapers(papers);
-    });*/
-
-    $('#reset').click(function(){
-      clearResults();
-      $('#search-id').val('');
-      $('#search-year').val('');
-      displayPapers(result);
-    });
-
-    $('#edit-article').click(function(){
-      var id = $('#display-dialog-id').text();
-      var papers = getPaperById(data.papers, id);
-
-      //close article_dialog
-      article_dialog.close();
-
-      clearInfoEditDialog();
-      addPaperInfoToEditDialog(papers);
-      //displayEditDialog
-      edit_dialog.showModal();
-      $('.cancel').click(function(){
-        //clear edit_dialog
-        edit_dialog.close();
-      })
-
-      $('.save').click(function(){
-        if (validateSave()){
-          console.log("Saved validated");
-          new_article = addPaper();
-          console.log("New article generated");
-          //socket.emit('saveArticle',{article: new_article, type:'edit'});
-          edit_dialog.close();
-        }
-      })
-
+    $('.cancel').click(function(){
+      edit_dialog.close();
     });
   });
 
-  $(document.body).on('click','#addAuthor',function(){
+  $('#edit-article').click(function(){
+    var id = $('#display-dialog-id').text();
+    var papers = getPaperById(data.papers, id);
+
+    //close article_dialog
+    article_dialog.close();
+
+    clearInfoEditDialog();
+    addPaperInfoToEditDialog(papers);
+    //displayEditDialog
+    edit_dialog.showModal();
+    $('.cancel').click(function(){
+      //clear edit_dialog
+      edit_dialog.close();
+    })
+
+    $('.save').click(function(){
+      if (validateSave()){
+        console.log("Saved validated");
+        new_article = addPaper();
+        console.log("New article generated");
+        //socket.emit('saveArticle',{article: new_article, type:'edit'});
+        edit_dialog.close();
+      }
+    })
+
+  });
+
+  $('#addAuthor').click(function(){
     //add author chip to authors div + author value to authors hidden input
     $('#edit-authors').append('<span class="mdl-chip mdl-chip--deletable author"><span class="mdl-chip__text">' + $('#edit-dialog-author').val() + '</span><button type="button" class="mdl-chip__action delete-author"><i class="material-icons">cancel</i></button></span>');
     console.log("Author added");
   });
 
-  $(document.body).on('click','#addKeyword',function(){
+  $('#addKeyword').click(function(){
     $('#edit-keywords').append('<span class="mdl-chip mdl-chip--deletable keyword"><span class="mdl-chip__text">' + $('#edit-dialog-keyword').val() + '</span><button type="button" class="mdl-chip__action delete-keyword"><i class="material-icons">cancel</i></button></span>');
   });
 
-  $(document.body).on('click','#addReference',function(){
+  $('#addReference').click(function(){
     $('#edit-references').append('<span class="mdl-chip mdl-chip--deletable reference"><span class="mdl-chip__text">' + $('#edit-dialog-reference').val() + '</span><button type="button" class="mdl-chip__action delete-reference"><i class="material-icons">cancel</i></button></span>');
   });
 
-  $(document.body).on('click','.delete-author',function(){
+  $('.delete-author').click(function(){
     $(this).parent().remove();
     //remove author name from list of authors as input
   });
 
-  $(document.body).on('click','.delete-keyword',function(){
+  $('.delete-keyword').click(function(){
     $(this).parent().remove();
     //remove author name from list of keywords as input
   });
 
-  $(document.body).on('click','.delete-reference',function(){
+  $('.delete-reference').click(function(){
     $(this).parent().remove();
     //remove author name from list of references as input
   });
+
+  $('.result').click(function(){
+    var var_key = $(this).attr('id');
+    $.post('/articles/display',{
+      key : var_key
+    }).done(function(article){
+      //clear modal info
+      clearPaperInfoDialog();
+      addPaperInfoToDisplayDialog(article);
+      article_dialog.showModal();
+
+      $('.cancel').click(function(){
+        article_dialog.close();
+      });
+
+    }).fail(function(){
+      console.log('Unable to retrieve data from database');
+    });
+  });
+
 });
