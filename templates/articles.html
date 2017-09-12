@@ -87,8 +87,8 @@
                       <div class = "mdl-grid" style = "width: 100%;">
                         <!-- LINK -->
                         <div class="mdl-cell mdl-cell--8-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                          <input id="edit-dialog-url" class="mdl-textfield__input" type="text" name="url">
-                          <label class="mdl-textfield__label" for="edit-dialog-url">Link</label>
+                          <input id="edit-dialog-link" class="mdl-textfield__input" type="text" name="link">
+                          <label class="mdl-textfield__label" for="edit-dialog-link">Link</label>
                         </div>
                         <div class = "mdl-cell mdl-cell--2-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                           <input id="edit-dialog-where" class = "mdl-textfield__input" type = "text" name = "where">
@@ -104,8 +104,8 @@
                         <!-- SAVED -->
                         <div class="mdl-cell mdl-cell--3-col">
                           <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="edit-dialog-saved">
-                            <input id="dialog-saved" type="checkbox" class="mdl-checkbox__input" name="saved">
-                            <label for="dialog-saved">Saved</label>
+                            <input id="edit-dialog-saved" type="checkbox" class="mdl-checkbox__input" name="saved">
+                            <span class="mdl-checkbox__label">Saved</span>
                           </label>
                         </div>
                         <!-- PRINTED -->
@@ -136,84 +136,52 @@
                       <!-- AUTHORS -->
                       <div>
                         <div class = "mdl-card__supporting-text" style = "padding:8px; padding-bottom:0px;">Authors</div>
-                        <div id = "edit-authors" class = "" style = "padding:10px;">
-                          <span class="mdl-chip mdl-chip--deletable author">
-                            <span class="mdl-chip__text">Weinan Zhang</span>
-                            <button type="button" class="mdl-chip__action delete-author"><i class="material-icons">cancel</i></button>
-                          </span>
-                          <span class="mdl-chip mdl-chip--deletable author">
-                            <span class="mdl-chip__text">Jun Wang</span>
-                            <button type="button" class="mdl-chip__action delete-author"><i class="material-icons">cancel</i></button>
-                          </span>
-                          <span class="mdl-chip mdl-chip--deletable author">
-                            <span class="mdl-chip__text">Shuai Yuan</span>
-                            <button type="button" class="mdl-chip__action delete-author"><i class="material-icons">cancel</i></button>
-                          </span>
+                        <div id = "edit-dialog-authors" class = "" style = "padding:10px;">
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                          <input id="edit-dialog-authors" type="hidden">
-                          <input id="edit-dialog-author" class="mdl-textfield__input" type="text" name="authors">
+                          <input id="edit-dialog-authors-input" type="hidden">
+                          <input id="edit-dialog-author-input" class="mdl-textfield__input" type="text" name="authors">
                           <label class="mdl-textfield__label" for="edit-dialog-author">Author Name</label>
                         </div>
-                        <button id="addAuthor" type="button" class="mdl-button mdl-js-button mdl-button--raised author">
+                        <button id="edit-dialog-author-button" type="button" class="mdl-button mdl-js-button mdl-button--raised author">
                           Add Author
                         </button>
                       </div>
                       <!-- KEYWORDS -->
                       <div>
                         <div class = "mdl-card__supporting-text" style = "padding:8px; padding-bottom:0px;">Keywords</div>
-                        <div id = "edit-keywords" class = "" style = "padding:10px;">
+                        <div id = "edit-dialog-keywords" class = "" style = "padding:10px;">
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                          <input id="edit-dialog-keywords" type="hidden">
-                          <input id="edit-dialog-keyword" class="mdl-textfield__input" type="text" name="keywords">
+                          <input id="edit-dialog-keywords-input" type="hidden">
+                          <input id="edit-dialog-keyword-input" class="mdl-textfield__input" type="text" name="keywords">
                           <label class="mdl-textfield__label" for="edit-dialog-keyword">Keyword</label>
                         </div>
-                        <button id="addKeyword" type="button" class="mdl-button mdl-js-button mdl-button--raised keyword">
+                        <button id="edit-dialog-keyword-button" type="button" class="mdl-button mdl-js-button mdl-button--raised keyword">
                           Add Keyword
                         </button>
                       </div>
                       <!-- REFERENCES -->
                       <div>
                         <div class = "mdl-card__supporting-text" style = "padding:8px; padding-bottom:0px;">References</div>
-                        <div id = "edit-references" class = "" style = "padding:10px;">
+                        <div id = "edit-dialog-references" class = "" style = "padding:10px;">
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                          <input id="edit-dialog-references" type="hidden">
-                          <input id="edit-dialog-reference" class="mdl-textfield__input" type="text" name="references">
+                          <input id="edit-dialog-references-input" type="hidden">
+                          <input id="edit-dialog-reference-input" class="mdl-textfield__input" type="text" name="references">
                           <label class="mdl-textfield__label" for="edit-dialog-reference">Title, Year</label>
                         </div>
-                        <button id="idReference" type="button" class="mdl-button mdl-js-button mdl-button--raised reference">
+                        <button id="edit-dialog-reference-button" type="button" class="mdl-button mdl-js-button mdl-button--raised reference">
                           Add Reference
                         </button>
                       </div>
                       <!-- NOTES -->
                       <div>
                         <div class = "mdl-card__supporting-text" style = "padding:8px; padding-bottom:0px;">Notes</div>
-                        <div id = "" style = "padding:10px;">
-                          <div class="mdl-card mdl-shadow--4dp" style="width:100%; border: 8px solid #efc734;">
-                            <div class="mdl-card__title">
-                              <div class="mdl-card__subtitle-text">
-                                06/07/2017
-                              </div>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                              fugiat nulla pariatur.
-                              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </div>
-                            <div class = "mdl-card__actions mdl-card--border">
-                              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect delete-note" style="float:right;">
-                                DELETE
-                              </a>
-                            </div>
-                          </div>
+                        <div id = "edit-dialog-notes" style = "padding:10px;">
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                          <input id="edit-dialog-references" class="mdl-textfield__input" type="text" name="references">
+                          <input id="edit-dialog-notes" class="mdl-textfield__input" type="text" name="references">
                           <label class="mdl-textfield__label" for="edit-dialog-references">(date) + text</label>
                         </div>
                         <button type="button" class="mdl-button mdl-js-button mdl-button--raised" style = "background-color:#EFC734;">
@@ -225,7 +193,7 @@
                         <button type="submit" class="mdl-button save mdl-button--primary mdl-js-button mdl-button--raised mdl-button--primary" style="background-color:">
                           SAVE
                         </button>
-                        <button type="cancel" class="mdl-button mdl-js-button mdl-button--raised cancel">
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised cancel">
                           CANCEL
                         </button>
                       </div>
@@ -273,34 +241,17 @@
                     <div id="display-dialog-solution" style="padding:10px;color:green;font-size:16px;"></div>
                     <!-- AUTHORS -->
                     <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Authors</div>
-                    <div id="display-dialog-authors" style="padding:10px;">
-                    </div>
+                    <div id="display-dialog-authors" style="padding:10px;"></div>
                     <!-- KEYWORDS -->
                     <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">Keywords</div>
-                    <div id="display-dialog-keywords" style="padding:10px;">
-                    </div>
+                    <div id="display-dialog-keywords" style="padding:10px;"></div>
                     <!-- REFERENCES -->
                     <div class="mdl-card__supporting-text" style="padding:8px;padding-bottom:0px;">References</div>
-                    <div id="display-dialog-references" style="padding:10px;">
-                    </div>
+                    <div id="display-dialog-references" style="padding:10px;"></div>
                     <!-- NOTES -->
                     <div class = "mdl-card__supporting-text" style="padding:8px; padding-bottom:0px;">Notes</div>
-                    <div id="display-dialog-notes" style="border-bottom:1px solid #E0E0E0;padding:10px;">
-                      <div class="mdl-card mdl-shadow--4dp note">
-                        <div class="mdl-card__title">
-                          <div class="mdl-card__subtitle-text">
-                            06/07/2017
-                          </div>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                          fugiat nulla pariatur.
-                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </div>
-                      </div>
-                    </div>
+                    <div id="display-dialog-notes" style="border-bottom:1px solid #E0E0E0;padding:10px;"></div>
+                    <!-- ACTIONS -->
                     <div class="mdl-dialog__actions">
                       <button type="button" class="mdl-button mdl-button--primary mdl-js-button mdl-button--raised mdl-button--primary" style="background-color:">
                         <a id="open-pdf" href="" target="_blank">LINK</a>
@@ -316,6 +267,7 @@
                       </button>
                     </div>
                   </dialog>
+                  <!-- CONFIRM DELETE DIALOG -->
                   <dialog id="confirm-delete-dialog" class="mdl-dialog">
                     <form name="" action="/articles/delete" method="POST">
                       <h5 class="mdl-dialog__title">Are you sure you want to delete this article?</h5>

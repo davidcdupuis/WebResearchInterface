@@ -240,7 +240,7 @@ def display_article():
         session.rollback()
 
     article = get_article_info(result)
-    # useless
+    # uselessss
     return jsonify({
         'key': article['key'],
         'title': article['title'],

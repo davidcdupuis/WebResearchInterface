@@ -1,12 +1,13 @@
 # Research Web Interface
 
 The Research Web Interface (RWI) is a Flask web interface designed specifically to answer my needs
-regarding real-time bidding research.
+regarding research.
 
-The interface is organised into several sections:
+The interface is organised in several sections:
 
 - Home
 - Articles
+- Discover
 - Visualizations
 - Documentation
 - Resources
@@ -18,14 +19,16 @@ Although I have designed and coded this interface to answer my own personal need
 by any other researcher who might find it useful and who might enjoy contributing to it.
 
 There exist many available software for organising scientific papers but none I have found offer
-a nice display, easy-to-use functionalities and great visualizations. I do not claim to be achieve perfection
-but I am hoping that an interested community my participant in this open-source project to facilitate the work of the
+a nice display, easy-to-use functionalities and great visualizations. I do not claim to achieve perfection
+but I am hoping that an interested community might participate in this open-source project to facilitate the work of the
 scientific community.
 
 ## Home
 
 The basic introductory page for both the interface and the research subject itself.
 In my case: Real-Time Bidding.
+
+![Home Screenshot](./screenshots/home_page.png)
 
 ## Articles
 
@@ -39,6 +42,13 @@ This is where one should be able to find a complete list of all the relevant art
   - Id, score, title, year, saved, printed, read, problem, solution, authors, keywords and references
   - If a url is provided, the user may open the article in another tab
 - The user should be able to Edit any desired article and even delete an article
+
+![Article Screenshot](./screenshots/articles_page.png)
+
+![Add Article Card Screenshot](./screenshots/add_article_card.png)
+
+![Article Card Screenshot](./screenshots/article_card.png)
+
 
 ## Visualizations
 
@@ -54,6 +64,8 @@ the relationships that the articles have amongst themselves.
 - The user should be able to view a tree diagram of the ancestry of an article
 
 It would be interesting to connect these visualizations with the Articles page in order to allow the user to click a node and view it's details.
+
+![Visualization Screenshot](./screenshots/visualization_page.png)
 
 ## Documentation
 
@@ -71,6 +83,8 @@ For RTB there are different types of docs:
 
 These articles should be written in Markdown and converted to HTML format for proper display on the webpage.
 
+![Documentation Screenshot](./screenshots/documentation_page.png)
+
 ## Resources
 
 This is where one should be able to find a list of resources concercing the research theme.
@@ -82,6 +96,8 @@ There are different types of resources:
 - Online Article
 - News Article
 
+![Resources Screenshot](./screenshots/resources_page.png)
+
 ## Ideas / Notes
 
 Currently defined as Ideas, this section might be changed to Notes to allow the user
@@ -90,13 +106,19 @@ to properly gather and organise his or her thoughts regarding his research.
 I find myself sometimes taking notes but forgeting about them. This would allow me to
 aggregate the necessary information all in one clean page.
 
+![Notes Screenshot](./screenshots/notes_page.png)
+
 ## Questions
 
 There are many questions that can be asked about specific domains. It is important to take note of the question and of it's answer if available. Often an unanswered question can be the source of further investigation, research and eventually innovation. Having available a list of all questions and answers will prove useful when things get more complex.
 
+![Questions Screenshot](./screenshots/questions_page.png)
+
 ## Dictionary
 
 There are many important, complex and specific terms to every research domain. I find it's important to have a list of terms and definitions available.
+
+![Dictionary Screenshot](.screenshots/dictionary_page.png)
 
 ## Further Work
 
